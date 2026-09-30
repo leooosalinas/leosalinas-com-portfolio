@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo(nardo) Salinas | Ser humano. Curioso. Me gusta hacer cosas. También hago fotos.</title>
+    <meta name="description" content="Portfolio de comunicación, producción de eventos, gestión de proyectos y fotografía por Leo(nardo) Salinas en Barcelona.">
+    <meta name="author" content="Leo(nardo) Salinas">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Leo(nardo) Salinas | Comunicación, Proyectos y Fotografía">
+    <meta property="og:description" content="Portfolio de proyectos, trabajos y fotografías de Leo(nardo) Salinas en Barcelona.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Google Fonts: Source Serif 4 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+                        sans: ['"Source Serif 4"', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base typography strictly set to Source Serif 4 */
+        * {
+            font-family: 'Source Serif 4', Georgia, serif !important;
+        }
+
+        /* Wall background texture mimicking a plaster / chalk white wall */
+        body {
+            background-color: #f7f6f2;
+            color: #222222;
+        }
+
+        /* Art frame container - subtle zoom on the entire frame */
+        .art-frame {
+            position: relative;
+            background: #ffffff;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            transform: scale(1);
+            overflow: hidden;
+        }
+
+        .art-frame:hover {
+            transform: scale(1.01);
+        }
+
+        .art-image-wrapper {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .art-frame img {
+            transition: filter 0.4s ease-in-out;
+            filter: grayscale(100%);
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .art-frame:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* Frame Finish Colors (10 Wood & Gallery Options) */
+        .bg-frame-black { background-color: #1a1a1a; border-color: #1a1a1a; }
+        .bg-frame-white { background-color: #ffffff; border-color: #ffffff; }
+        .bg-frame-wood { background-color: #ba8d5b; border-color: #ba8d5b; }
+        .bg-frame-darkwood { background-color: #3d2817; border-color: #3d2817; }
+        .bg-frame-warmwood { background-color: #8c5d3b; border-color: #8c5d3b; }
+        .bg-frame-ebony { background-color: #241c18; border-color: #241c18; }
+        .bg-frame-pine { background-color: #d8b888; border-color: #d8b888; }
+        .bg-frame-mahogany { background-color: #5c2419; border-color: #5c2419; }
+        .bg-frame-beech { background-color: #e2c499; border-color: #e2c499; }
+        .bg-frame-agedwood { background-color: #6e543c; border-color: #6e543c; }
+
+        /* Frame Border Thickness Variants */
+        .frame-medium {
+            border-width: 6px;
+            border-style: solid;
+            box-shadow: inset 0 0 3px rgba(0,0,0,0.22), 0 8px 20px rgba(0,0,0,0.09);
+        }
+        @media (min-width: 640px) {
+            .frame-medium { border-width: 10px; }
+        }
+
+        .frame-thick {
+            border-width: 8px;
+            border-style: solid;
+            box-shadow: inset 0 0 4px rgba(0,0,0,0.28), 0 10px 24px rgba(0,0,0,0.12);
+        }
+        @media (min-width: 640px) {
+            .frame-thick { border-width: 16px; }
+        }
+
+        .frame-chunky {
+            border-width: 10px;
+            border-style: solid;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.35), 0 14px 30px rgba(0,0,0,0.15);
+        }
+        @media (min-width: 640px) {
+            .frame-chunky { border-width: 22px; }
+        }
+
+        /* Generous Paspartú / Matting internal spacing */
+        .matting-generous { padding: 8px; background-color: #fdfdfd; }
+        .matting-wide { padding: 12px; background-color: #fafafa; }
+        .matting-extra-wide { padding: 16px; background-color: #f7f7f7; }
+
+        @media (min-width: 640px) {
+            .matting-generous { padding: 18px; }
+            .matting-wide { padding: 26px; }
+            .matting-extra-wide { padding: 36px; }
+        }
+
+        /* Custom scrollbar hiding & drag cursor styles for carousels */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .drag-carousel {
+            cursor: grab;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .drag-carousel:active, .drag-carousel.is-dragging {
+            cursor: grabbing;
+        }
+
+        .drag-carousel img {
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-serif antialiased text-gray-800 selection:bg-gray-200 selection:text-black">
+
+    <header class="w-full py-6 sm:py-10 px-6 max-w-7xl mx-auto flex justify-between items-center relative z-40">
+        <div class="text-left">
+            <a href="#" class="block group">
+                <h1 class="text-4xl sm:text-4xl font-semibold tracking-tight text-gray-900 group-hover:text-gray-700 transition-colors">Hola, soy Leo(nardo)</h1>
+                <p class="text-xs tracking-wider text-gray-500 mt-1">Ser humano. Curioso. Me gusta hacer cosas. También hago fotos.</p>
+            </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8 text-xs sm:text-sm tracking-wider uppercase text-gray-600">
+            <a href="#galeria" class="hover:text-black transition-colors">Fotografías</a>
+            <a href="#trabajos" class="hover:text-black transition-colors">Trabajos</a>
+            <a href="#sobre-mi" class="hover:text-black transition-colors">Sobre mí</a>
+            <a href="#contacto" class="hover:text-black transition-colors">Contacto</a>
+        </nav>
+
+        <!-- Mobile & Tablet Hamburger Button (3 lines) -->
+        <button id="menu-btn" class="lg:hidden p-2 text-gray-800 hover:text-black focus:outline-none" aria-label="Abrir menú" onclick="toggleMobileMenu()">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Mobile & Tablet Navigation Overlay Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 lg:hidden" onclick="toggleMobileMenu()">
+        <div class="fixed top-0 right-0 w-4/5 max-w-xs h-full bg-[#f7f6f2] shadow-2xl p-6 flex flex-col justify-between" onclick="event.stopPropagation()">
+            <div>
+                <div class="flex justify-between items-center pb-6 border-b border-gray-300">
+                    <span class="text-sm font-semibold tracking-wider text-gray-900 uppercase">Menú</span>
+                    <button class="text-gray-600 hover:text-black text-2xl focus:outline-none" onclick="toggleMobileMenu()">&times;</button>
+                </div>
+                <nav class="flex flex-col space-y-6 mt-8 text-sm tracking-widest uppercase text-gray-700">
+                    <a href="#galeria" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Fotografías</a>
+                    <a href="#trabajos" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Trabajos</a>
+                    <a href="#sobre-mi" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Sobre mí</a>
+                    <a href="#contacto" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Contacto</a>
+                </nav>
+            </div>
+            <div class="pt-6 border-t border-gray-300 text-xs text-gray-500">
+                <p class="font-medium text-gray-800">Leo(nardo) Salinas</p>
+                <p class="mt-1 text-[11px]">from Barcelona with love 🖤</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-grow w-full">
+        <section id="galeria" class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-6 sm:py-12 border-b border-gray-300/60">
+            <!-- First Grid Block (Frames 1 to 4) -->
+            <div id="gallery-grid-1" class="columns-2 lg:columns-4 gap-3 sm:gap-8 lg:gap-12 space-y-4 sm:space-y-14">
+
+                <!-- FRAME 1 -->
+                <article class="break-inside-avoid mb-4 sm:mb-16 pt-2 -rotate-[0.3deg]">
+                    <div class="art-frame bg-frame-black frame-thick cursor-pointer" onclick="openLightbox(this)"
+                         data-title="Igna" 
+                         data-desc="Igna. Nos conocimos durante mi época produciendo eventos, particularmente nos conocimos produciendo 'FestiGame'. Retrato en El Raval."
+                         data-location="El Raval, Barcelona">
+                        <div class="matting-extra-wide">
+                            <div class="art-image-wrapper aspect-[4/6]">
+                                <img src="https://leosalinas.com/img/photos/igna-lopez-barrio-raval.jpg" 
+                                     alt="Igna López" loading="lazy" width="800" height="1200">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FRAME 2 -->
+                <article class="break-inside-avoid mb-4 sm:mb-12 pt-6 rotate-[0.4deg]">
+                    <div class="art-frame bg-frame-wood frame-chunky cursor-pointer" onclick="openLightbox(this)"
+                         data-title="Rafael" 
+                         data-desc="Rafa, dueño del Atòmïc Bar en Gràcia. Observando la calle durante un día de Festa Major."
+                         data-location="Atòmïc Bar - Gràcia, Barcelona">
+                        <div class="matting-wide">
+                            <div class="art-image-wrapper aspect-[4/6]">
+                                <img src="https://leosalinas.com/img/photos/rafa-atomic-bar.jpeg" 
+                                     alt="Rafael de Atòmïc Bar" loading="lazy" width="800" height="1200">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FRAME 3 -->
+                <article class="break-inside-avoid mb-5 sm:mb-20 pt-1 sm:pt-8 -rotate-[0.2deg]">
+                    <div class="art-frame bg-frame-ebony frame-medium cursor-pointer" onclick="openLightbox(this)"
+                         data-title="Paola, Entre Latas" 
+                         data-desc="Paola debe ser de las personas que más acostumbro a ver sonreír en el barrio."
+                         data-location="'Entre Latas' - Gràcia, Barcelona">
+                        <div class="matting-generous">
+                            <div class="art-image-wrapper aspect-[4/6]">
+                                <img src="https://leosalinas.com/img/photos/paola-entre-latas.jpeg" 
+                                     alt="Paola de Entre Latas" loading="lazy" width="800" height="1200">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FRAME 4 -->
+                <article class="break-inside-avoid mb-5 sm:mb-16 pt-0 sm:pt-6 -rotate-[0.4deg]">
+                    <div class="art-frame bg-frame-white frame-chunky cursor-pointer" onclick="openLightbox(this)"
+                         data-title="Timón" 
+                         data-desc="Timón, el perro más noble del barrio de Gràcia en Atòmïc Bar."
+                         data-location="Atòmïc Bar - Gràcia, Barcelona">
+                        <div class="matting-extra-wide">
+                            <div class="art-image-wrapper aspect-[4/6]">
+                                <img src="https://leosalinas.com/img/photos/timon-atomic-bar.jpg" 
+                                     alt="Timón en Atòmïc Bar" loading="lazy" width="800" height="1200">
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+
+            </div>
+            <div class="text-center max-w-4xl mx-auto mb-16 mt-16 sm:mb-20">
+                <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold block mb-2">Fotografías</span>
+                <h2 class="text-4xl sm:text-4xl font-normal tracking-tight text-gray-900">Colecciono historias para vivir de ellas</h2>
+                <p class="text-sm sm:text-base text-gray-600 mt-4 leading-relaxed">
+                    Con el paso del tiempo, cultivé el gusto de capturar momentos a través de una cámara. Cualquier cámara. Aquí algunas de mis favoritas y la historia relacionada a ellas.
+                </p>    
+            </div>
+
+            <!-- Second Grid Block (Frames 5 to 8) -->
+            <div id="gallery-grid-2" class="columns-2 md:columns-3 lg:columns-4 gap-3 sm:gap-8 lg:gap-12 space-y-4 sm:space-y-14">
+
+                <!-- FRAME 5 -->
+                <article class="break-inside-avoid mb-4 sm:mb-14 pt-4 rotate-[0.3deg]">
+                    <div class="art-frame bg-frame-pine frame-thick cursor-pointer" onclick="openLightbox(this)"
+                         data-title="La Pemy" 
+                         data-desc="Pablo y Pemy disfrutando de una tarde de descanso en el sofá."
+                         data-location="Ñuñoa - Santiago, Chile">
+                        <div class="matting-wide">
+                            <div class="art-image-wrapper aspect-[6/3]">
+                                <img src="https://leosalinas.com/img/photos/pablo-pemy.jpg" 
+                                     alt="Pablo y Pemy" loading="lazy" width="900" height="600">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FRAME 6 -->
+                <article class="break-inside-avoid mb-4 sm:mb-16 pt-5 rotate-[0.2deg]">
+                    <div class="art-frame bg-frame-black frame-thick cursor-pointer" onclick="openLightbox(this)"
+                         data-title="Care' Hiena en Hornopirén" 
+                         data-desc="Paseo por el sur de Chile junto a Care' Hiena y el Volcán Hornopirén de fondo."
+                         data-location="Hornopirén, Chile ">
+                        <div class="matting-wide">
+                            <div class="art-image-wrapper aspect-[4/6]">
+                                <img src="https://leosalinas.com/img/photos/care-hiena-volcan-hornopiren.jpg" 
+                                     alt="Care Hiena en Chile" loading="lazy" width="800" height="1200">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FRAME 7 -->
+                <article class="break-inside-avoid mb-5 sm:mb-16 pt-3 -rotate-[0.4deg]">
+                    <div class="art-frame bg-frame-mahogany frame-thick cursor-pointer" onclick="openLightbox(this)"
+                         data-title="Yelli & Simy" 
+                         data-desc="Retrato cotidiano de Yelli y Simy en la pastelería del barrio."
+                         data-location="Gràcia, Barcelona">
+                        <div class="matting-extra-wide">
+                            <div class="art-image-wrapper aspect-[4/6]">
+                                <img src="https://leosalinas.com/img/photos/yelli-simy-pastisseria.jpeg" 
+                                     alt="Yelli y Simy Pastisseria" loading="lazy" width="800" height="1200">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FRAME 8 -->
+                <article class="break-inside-avoid mb-4 sm:mb-12 pt-1 rotate-[0.5deg]">
+                    <div class="art-frame bg-frame-agedwood frame-chunky cursor-pointer" onclick="openLightbox(this)"
+                         data-title="Citroën en El Clot" 
+                         data-desc="Un vehículo clásico aparcado pacientemente entre las calles del barrio de El Clot."
+                         data-location="El Clot, Barcelona">
+                        <div class="matting-wide">
+                            <div class="art-image-wrapper aspect-[4/6]">
+                                <img src="https://leosalinas.com/img/photos/citroen-parked-barcelona-el-clot.jpg" 
+                                     alt="Citroën aparcado en El Clot" loading="lazy" width="800" height="1200">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="trabajos" class="w-full py-16 sm:py-24 bg-[#f4f3ee]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-4xl mx-auto mb-16 mt-16 sm:mb-20">
+                    <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold block mb-2">Trabajos</span>
+                    <h2 class="text-4xl sm:text-4xl font-normal tracking-tight text-gray-900">Las cosas que hago por dinero (y otras cuantas por amor)</h2>
+                    <p class="text-sm sm:text-base text-gray-600 mt-4 leading-relaxed">
+                        A los 14 aprendí a hacer sitios web y el resto no sabría como describirlo. Soy comunicador. Sin embargo, me apasiona todo lo que no conozco. Aquí están las huellas de mis decisiones laborales.
+                    </p>    
+                </div>
+
+                <!-- PROJECT CAROUSEL ITEM 1: FestiGame -->
+                <div class="mb-20 sm:mb-28 group-carousel" id="project-1">
+                    <!-- Title & Context -->
+                    <div class="text-center max-w-2xl mx-auto mb-6 px-4">
+                        <h3 class="text-2xl sm:text-3xl font-normal text-gray-900 tracking-tight">FestiGame & Festivales Masivos</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
+                            Dirección de producción, coordinación logística de escenarios y activaciones de marca para eventos masivos de gaming y cultura pop con más de 40.000 asistentes.
+                        </p>
+                    </div>
+
+                    <!-- Carousel Track Container -->
+                    <div class="relative w-full overflow-hidden my-6">
+                        <!-- Left Arrow Button -->
+                        <button onclick="scrollCarousel('carousel-1', -1)" 
+                                class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center backdrop-blur-md transition-all shadow-lg focus:outline-none"
+                                aria-label="Anterior imagen">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+
+                        <!-- Right Arrow Button -->
+                        <button onclick="scrollCarousel('carousel-1', 1)" 
+                                class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center backdrop-blur-md transition-all shadow-lg focus:outline-none"
+                                aria-label="Siguiente imagen">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+
+                        <!-- Scrollable Track (25% smaller dimensions: w-52 sm:w-72) -->
+                        <div id="carousel-1" class="drag-carousel flex space-x-3 sm:space-x-5 overflow-x-auto no-scrollbar px-4 sm:px-10 py-2">
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Producción de escenarios" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Asistentes y público" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" alt="Luces y backstage" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Audio y experiencia" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80" alt="Montaje técnico" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Action Button -->
+                    <div class="text-center mt-6">
+                        <a href="#contacto" class="inline-block border border-gray-900 text-gray-900 px-8 py-2.5 text-xs tracking-widest uppercase hover:bg-gray-900 hover:text-white transition-all duration-300">
+                            Ver detalles
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECT CAROUSEL ITEM 2: Liga MMA México -->
+                <div class="mb-20 sm:mb-28 group-carousel" id="project-2">
+                    <!-- Title & Context -->
+                    <div class="text-center max-w-2xl mx-auto mb-6 px-4">
+                        <h3 class="text-2xl sm:text-3xl font-normal text-gray-900 tracking-tight">Liga de Artes Marciales Mixtas (MMA)</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
+                            Gestión de comunicación integral, estrategia editorial para redes sociales y cobertura audiovisual de combate en directo para la liga profesional en México.
+                        </p>
+                    </div>
+
+                    <!-- Carousel Track Container -->
+                    <div class="relative w-full overflow-hidden my-6">
+                        <!-- Left Arrow Button -->
+                        <button onclick="scrollCarousel('carousel-2', -1)" 
+                                class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center backdrop-blur-md transition-all shadow-lg focus:outline-none"
+                                aria-label="Anterior imagen">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+
+                        <!-- Right Arrow Button -->
+                        <button onclick="scrollCarousel('carousel-2', 1)" 
+                                class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center backdrop-blur-md transition-all shadow-lg focus:outline-none"
+                                aria-label="Siguiente imagen">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+
+                        <!-- Scrollable Track (25% smaller dimensions: w-52 sm:w-72) -->
+                        <div id="carousel-2" class="drag-carousel flex space-x-3 sm:space-x-5 overflow-x-auto no-scrollbar px-4 sm:px-10 py-2">
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=800&q=80" alt="Lona y octágono" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="Atletas y preparación" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Entrenamiento y pesaje" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80" alt="Prensa y transmisión" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Action Button -->
+                    <div class="text-center mt-6">
+                        <a href="#contacto" class="inline-block border border-gray-900 text-gray-900 px-8 py-2.5 text-xs tracking-widest uppercase hover:bg-gray-900 hover:text-white transition-all duration-300">
+                            Explorar campaña
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECT CAROUSEL ITEM 3: Historias de Barrio / Atòmïc Bar -->
+                <div class="mb-12 group-carousel" id="project-3">
+                    <!-- Title & Context -->
+                    <div class="text-center max-w-2xl mx-auto mb-6 px-4">
+                        <h3 class="text-2xl sm:text-3xl font-normal text-gray-900 tracking-tight">Historias de Barrio & Comercio Local</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
+                            Cápsulas en vídeo y fotografía documental retratando la vida de barrio, tiendas tradicionales y locales con encanto en Gràcia y Barcelona.
+                        </p>
+                    </div>
+
+                    <!-- Carousel Track Container -->
+                    <div class="relative w-full overflow-hidden my-6">
+                        <!-- Left Arrow Button -->
+                        <button onclick="scrollCarousel('carousel-3', -1)" 
+                                class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center backdrop-blur-md transition-all shadow-lg focus:outline-none"
+                                aria-label="Anterior imagen">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+
+                        <!-- Right Arrow Button -->
+                        <button onclick="scrollCarousel('carousel-3', 1)" 
+                                class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center backdrop-blur-md transition-all shadow-lg focus:outline-none"
+                                aria-label="Siguiente imagen">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+
+                        <!-- Scrollable Track (25% smaller dimensions: w-52 sm:w-72) -->
+                        <div id="carousel-3" class="drag-carousel flex space-x-3 sm:space-x-5 overflow-x-auto no-scrollbar px-4 sm:px-10 py-2">
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://leosalinas.com/img/photos/rafa-atomic-bar.jpeg" alt="Rafa en Atòmïc Bar" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://leosalinas.com/img/photos/paola-entre-latas.jpeg" alt="Paola de Entre Latas" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://leosalinas.com/img/photos/timon-atomic-bar.jpg" alt="Timón el perro de Gràcia" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-none w-52 sm:w-72 aspect-square sm:aspect-[4/5] bg-gray-200 overflow-hidden shadow-sm">
+                                <img src="https://leosalinas.com/img/photos/nat-atomic-bar.jpg" alt="Nat afuera del bar" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Action Button -->
+                    <div class="text-center mt-6">
+                        <a href="https://www.instagram.com/leooosalinas" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-900 text-gray-900 px-8 py-2.5 text-xs tracking-widest uppercase hover:bg-gray-900 hover:text-white transition-all duration-300">
+                            Ver reels en Instagram
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="max-w-4xl mx-auto px-6 py-16 sm:py-24 border-t border-gray-300/60">
+            <div class="text-center">
+                <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold block mb-2">Sobre mí</span>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">Hola, soy Leo(nardo) Salinas</h2>
+                <div class="mt-6 text-sm sm:text-base text-gray-700 leading-relaxed space-y-4 max-w-2xl mx-auto text-left sm:text-center">
+                    <p>
+                        Emigré a Barcelona desde Chile. Me especializo en dar vida a <strong>proyectos de comunicación, branding y creación de contenidos</strong>, gestionando desde la estrategia inicial hasta la producción final.
+                    </p>
+                    <p>
+                        He liderado actividades para marcas, participado en festivales masivos y desarrollado plataformas web y multimedia. Ocasionalmente fotografío las calles de Gràcia y capturo retratos de personas reales.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto" class="w-full border-t border-gray-300/60 bg-[#f7f6f2] max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center text-xs tracking-wider font-medium text-gray-500">
+        <p>Leo(nardo) Salinas &copy; Barcelona</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="mailto:hileosalinas@gmail.com" class="hover:text-black transition-colors">Email</a>
+            <a href="https://instagram.com/leooosalinas" target="_blank" rel="noopener noreferrer" class="hover:text-black transition-colors">Instagram</a>
+            <a href="https://linkedin.com/in/leooosalinas" target="_blank" rel="noopener noreferrer" class="hover:text-black transition-colors">LinkedIn</a>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white text-3xl font-light hover:text-gray-300 focus:outline-none z-20" onclick="closeLightbox()">&times;</button>
+        
+        <div class="max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row items-center bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+            <div class="w-full md:w-3/5 bg-black p-4 flex items-center justify-center max-h-[60vh] md:max-h-[85vh]">
+                <img id="lightbox-img" src="" alt="" class="max-h-[55vh] md:max-h-[80vh] w-auto object-contain border border-white/20 grayscale">
+            </div>
+
+            <div class="w-full md:w-2/5 p-6 text-white flex flex-col justify-between max-h-[35vh] md:max-h-[85vh] overflow-y-auto bg-zinc-900">
+                <div>
+                    <span id="lightbox-location" class="text-[10px] uppercase tracking-widest text-amber-400 block mb-1"></span>
+                    <h3 id="lightbox-title" class="text-xl font-normal tracking-wide text-zinc-100"></h3>
+                    <p id="lightbox-desc" class="text-xs text-zinc-400 mt-3 leading-relaxed pb-4"></p>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-zinc-800 flex justify-between items-center text-[11px] text-zinc-500">
+                    <span>Foto por Leo(nardo) Salinas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Track states for drag & infinite looping
+        const infiniteCarousels = {};
+
+        function initInfiniteDragCarousel(id) {
+            const container = document.getElementById(id);
+            if (!container) return;
+
+            // Save single set of original items HTML
+            const originalItemsHTML = container.innerHTML;
+
+            // Triple the items inside to allow seamless infinite loop wrapping [Set1, Set2, Set3]
+            container.innerHTML = originalItemsHTML + originalItemsHTML + originalItemsHTML;
+
+            // Disable default image dragging on all children
+            container.querySelectorAll('img').forEach(img => {
+                img.setAttribute('draggable', 'false');
+            });
+
+            // Store single set width
+            let singleSetWidth = 0;
+
+            function calculateSetWidth() {
+                const totalChildren = container.children.length;
+                const setSize = totalChildren / 3;
+                let width = 0;
+                for (let i = 0; i < setSize; i++) {
+                    const child = container.children[i];
+                    const style = window.getComputedStyle(child);
+                    const marginRight = parseFloat(style.marginRight) || 0;
+                    width += child.getBoundingClientRect().width + marginRight;
+                }
+                singleSetWidth = width;
+                if (singleSetWidth > 0 && container.scrollLeft === 0) {
+                    container.scrollLeft = singleSetWidth;
+                }
+            }
+
+            // Calculate initially and on resize
+            calculateSetWidth();
+            window.addEventListener('resize', calculateSetWidth);
+
+            // Handle infinite scroll wrapping on scroll event
+            container.addEventListener('scroll', () => {
+                if (!singleSetWidth) return;
+                
+                // Jump seamless when reaching left or right thresholds
+                if (container.scrollLeft <= 10) {
+                    container.scrollLeft += singleSetWidth;
+                } else if (container.scrollLeft >= (singleSetWidth * 2) - 10) {
+                    container.scrollLeft -= singleSetWidth;
+                }
+            });
+
+            // Click-and-hold (Drag) Interaction
+            let isDown = false;
+            let startX = 0;
+            let scrollLeftStart = 0;
+            let moved = false;
+
+            container.addEventListener('mousedown', (e) => {
+                isDown = true;
+                moved = false;
+                container.classList.add('is-dragging');
+                startX = e.pageX - container.offsetLeft;
+                scrollLeftStart = container.scrollLeft;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                if (isDown) {
+                    isDown = false;
+                    container.classList.remove('is-dragging');
+                }
+            });
+
+            container.addEventListener('mouseup', () => {
+                if (isDown) {
+                    isDown = false;
+                    container.classList.remove('is-dragging');
+                }
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 1.6; // Scroll speed factor
+                if (Math.abs(walk) > 5) moved = true;
+                container.scrollLeft = scrollLeftStart - walk;
+            });
+
+            // Touch events for drag on mobile/touch screens
+            let touchStartX = 0;
+            let touchScrollStart = 0;
+
+            container.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].pageX - container.offsetLeft;
+                touchScrollStart = container.scrollLeft;
+            }, { passive: true });
+
+            container.addEventListener('touchmove', (e) => {
+                const touchX = e.touches[0].pageX - container.offsetLeft;
+                const touchWalk = (touchX - touchStartX) * 1.5;
+                container.scrollLeft = touchScrollStart - touchWalk;
+            }, { passive: true });
+
+            infiniteCarousels[id] = { singleSetWidth };
+        }
+
+        // Scroll carousel with navigation arrows smoothly
+        function scrollCarousel(carouselId, direction) {
+            const container = document.getElementById(carouselId);
+            if (!container) return;
+            const scrollAmount = container.clientWidth * 0.65;
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Helper function to shuffle elements within a specific grid container
+        function shuffleGrid(gridId) {
+            const grid = document.getElementById(gridId);
+            if (!grid) return;
+            
+            const frames = Array.from(grid.children);
+            for (let i = frames.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [frames[i], frames[j]] = [frames[j], frames[i]];
+            }
+            frames.forEach(frame => grid.appendChild(frame));
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            shuffleGrid('gallery-grid-1'); // Shuffle frames 1-4
+            shuffleGrid('gallery-grid-2'); // Shuffle frames 5-8
+
+            // Initialize infinite drag carousels
+            initInfiniteDragCarousel('carousel-1');
+            initInfiniteDragCarousel('carousel-2');
+            initInfiniteDragCarousel('carousel-3');
+        });
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const title = element.getAttribute('data-title') || 'Obra Fotográfica';
+            const desc = element.getAttribute('data-desc') || 'Fotografía tomada en Barcelona por Leonardo Salinas.';
+            const location = element.getAttribute('data-location') || 'Barcelona';
+
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-img').alt = img.alt;
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox-desc').textContent = desc;
+            document.getElementById('lightbox-location').textContent = location;
+
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('hidden');
+            setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                document.getElementById('lightbox-img').src = '';
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (!menu) return;
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                setTimeout(() => menu.classList.remove('opacity-0'), 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('opacity-0');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+    </script>
+</body>
+</html>
