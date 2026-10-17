@@ -1,0 +1,540 @@
+/* Colores y tipografía compartidos por toda la página. */
+:root {
+    --page-bg: #f7f6f2;
+    --section-bg: #f4f3ee;
+    --ink: #222;
+    --muted: #6c6a66;
+    --serif: "Source Serif 4", Georgia, serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos base y enlaces globales. */
+body {
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--ink);
+    font-family: var(--serif);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Cabecera, navegación principal y menú móvil de Bootstrap. */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.site-brand {
+    display: grid;
+    gap: .2rem;
+}
+
+.site-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -.04em;
+    line-height: 1.15;
+}
+
+.site-tagline {
+    color: var(--muted);
+    font-size: .75rem;
+    letter-spacing: .04em;
+}
+
+.desktop-nav,
+.site-footer nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2.5vw, 2rem);
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.desktop-nav a,
+.site-footer a,
+.mobile-nav a {
+    transition: color .2s ease;
+}
+
+.desktop-nav a:hover,
+.site-footer a:hover,
+.mobile-nav a:hover {
+    color: #000;
+}
+
+.menu-toggle {
+    display: none;
+    padding: .5rem;
+    border: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    margin: 5px 0;
+    background: currentColor;
+}
+
+.mobile-navigation {
+    background: var(--page-bg);
+}
+
+.mobile-navigation .offcanvas-title {
+    font-size: .9rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.mobile-nav {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    font-size: .9rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.mobile-signature {
+    padding-top: 1.25rem;
+    border-top: 1px solid #d7d5cf;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.mobile-signature span {
+    color: var(--muted);
+    font-size: .7rem;
+    font-weight: 400;
+}
+
+/* Galería: cuadrícula regular para evitar que las columnas estrechen las fotos. */
+.gallery-section {
+    border-bottom: 1px solid #d7d5cf;
+}
+
+.section-heading {
+    max-width: 54rem;
+    margin-bottom: 3.5rem;
+}
+
+#galeria > .section-heading {
+    margin-top: 4rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: -.035em;
+}
+
+.section-heading p {
+    max-width: 48rem;
+    margin: 1rem auto 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: .5rem;
+    color: var(--muted);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.photo-card {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+.photo-frame {
+    display: block;
+    overflow: hidden;
+    padding: var(--frame-padding);
+    border: var(--frame-width) solid var(--frame-color);
+    background: #fff;
+    box-shadow: inset 0 0 4px #0003, 0 10px 24px #0002;
+    transition: transform .5s cubic-bezier(.16, 1, .3, 1);
+}
+
+.photo-frame-1 {
+    --frame-width: 4px;
+    --frame-padding: 6px;
+}
+
+.photo-frame-2 {
+    --frame-width: 7px;
+    --frame-padding: 9px;
+}
+
+.photo-frame-3 {
+    --frame-width: 10px;
+    --frame-padding: 12px;
+}
+
+.photo-frame-4 {
+    --frame-width: 14px;
+    --frame-padding: 15px;
+}
+
+.photo-frame-5 {
+    --frame-width: 18px;
+    --frame-padding: 18px;
+}
+
+.photo-image {
+    display: block;
+    aspect-ratio: var(--photo-ratio, 4 / 5);
+    overflow: hidden;
+}
+
+.photo-card:hover .photo-frame {
+    transform: scale(1.01);
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter .4s ease;
+}
+
+.photo-card:hover .photo-frame img {
+    filter: grayscale(0);
+}
+
+/* Proyectos, carruseles horizontales y sus controles. */
+.projects-section {
+    background: var(--section-bg);
+}
+
+.projects-section .section-heading {
+    margin-bottom: 1.5rem;
+}
+
+.projects-divider {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 3rem;
+    color: var(--muted);
+}
+
+.projects-divider svg {
+    width: clamp(2.5rem, 5vw, 3.5rem);
+    height: clamp(2.5rem, 5vw, 3.5rem);
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.project {
+    margin: 0 0 5rem;
+}
+
+.project:last-child {
+    margin-bottom: 0;
+}
+
+.project-heading {
+    max-width: 48rem;
+    margin: 0 auto 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.project-heading h3 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -.025em;
+}
+
+.project-heading p {
+    margin: .5rem 0 0;
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+.carousel-wrap {
+    position: relative;
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+
+.project-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: .5rem 2.5rem;
+    scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
+}
+
+.project-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.project-carousel.is-dragging {
+    cursor: grabbing;
+}
+
+.project-carousel img {
+    flex: 0 0 clamp(13rem, 24vw, 18rem);
+    width: clamp(13rem, 24vw, 18rem);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    pointer-events: none;
+    box-shadow: 0 2px 6px #0002;
+}
+
+.carousel-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 50%;
+    background: #000a;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.carousel-arrow:hover {
+    background: #000;
+}
+
+.carousel-arrow.previous {
+    left: .75rem;
+}
+
+.carousel-arrow.next {
+    right: .75rem;
+}
+
+.project-action {
+    display: table;
+    margin: 1.5rem auto 0;
+    padding: .7rem 2rem;
+    border: 1px solid #222;
+    color: #222;
+    font-size: .75rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    transition: color .2s ease, background .2s ease;
+}
+
+.project-action:hover {
+    background: #222;
+    color: white;
+}
+
+/* Texto de presentación personal. */
+.about-section {
+    max-width: 58rem;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+.about-copy {
+    max-width: 42rem;
+    margin: 1.5rem auto 0;
+    color: #55534f;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-top: 1px solid #d7d5cf;
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: .08em;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* Modal de Bootstrap para mostrar una fotografía ampliada. */
+.photo-modal-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    overflow: hidden;
+    border: 1px solid #333;
+    border-radius: .5rem;
+    background: #181818;
+    color: #eee;
+}
+
+.modal-close {
+    position: absolute;
+    z-index: 1;
+    top: .75rem;
+    right: .75rem;
+}
+
+.modal-photo {
+    display: grid;
+    min-height: 20rem;
+    max-height: 82vh;
+    place-items: center;
+    padding: 1rem;
+    background: #050505;
+}
+
+.modal-photo img {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+}
+
+.modal-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.modal-caption .eyebrow {
+    color: #e3b96f;
+    font-size: .65rem;
+}
+
+.modal-caption h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.modal-caption p,
+.modal-caption small {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+/* Ajustes de columnas y navegación para tablet y móvil. */
+@media (min-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .photo-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 991.98px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .site-header {
+        gap: .75rem;
+    }
+
+    .site-title {
+        font-size: 1.8rem;
+    }
+
+    .site-tagline {
+        max-width: 16rem;
+        font-size: .65rem;
+    }
+
+    .section-heading {
+        margin-bottom: 2.5rem;
+    }
+
+    .project-carousel {
+        gap: .75rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .carousel-arrow.previous {
+        left: .35rem;
+    }
+
+    .carousel-arrow.next {
+        right: .35rem;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-footer nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-size: .7rem;
+    }
+
+    .photo-modal-content {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-photo {
+        min-height: 12rem;
+        max-height: 55vh;
+    }
+
+    .modal-photo img {
+        max-height: 52vh;
+    }
+
+    .modal-caption {
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+}

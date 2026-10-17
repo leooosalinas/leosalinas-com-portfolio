@@ -1,0 +1,31 @@
+<header class="site-header container-xl py-4 py-lg-5" id="inicio">
+    <a class="site-brand" href="#inicio" aria-label="Leo(nardo) Salinas, inicio">
+        <span class="site-title">Leo(nardo) Salinas</span>
+        <span class="site-tagline">Ser humano. Curioso. Me gusta hacer cosas. También hago fotos.</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#galeria">Fotografías</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="menu-toggle btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-navigation" aria-controls="mobile-navigation" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<div class="offcanvas offcanvas-end mobile-navigation" tabindex="-1" id="mobile-navigation" aria-labelledby="mobile-navigation-title">
+    <div class="offcanvas-header border-bottom">
+        <h2 class="offcanvas-title" id="mobile-navigation-title">Menú</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <nav class="mobile-nav" aria-label="Navegación móvil">
+            <a href="#galeria" data-bs-dismiss="offcanvas">Fotografías</a>
+            <a href="#trabajos" data-bs-dismiss="offcanvas">Trabajos</a>
+            <a href="#sobre-mi" data-bs-dismiss="offcanvas">Sobre mí</a>
+            <a href="#contacto" data-bs-dismiss="offcanvas">Contacto</a>
+        </nav>
+        <p class="mobile-signature">Leo(nardo) Salinas<br><span>from Barcelona with love 🖤</span></p>
+    </div>
+</div>
