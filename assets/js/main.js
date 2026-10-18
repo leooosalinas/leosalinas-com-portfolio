@@ -1,4 +1,4 @@
-// Contenido de la galería y los proyectos, separado de la plantilla HTML.
+// Contenido de las fotografías y de las tarjetas de la galería del portfolio.
 const photos = [
     {
         title: "Igna",
@@ -75,52 +75,214 @@ const photos = [
     }
 ];
 
-const projects = [
+// Sustituye estos ejemplos por los datos definitivos; las descripciones admiten hasta 40 caracteres.
+const galleryItems = [
     {
-        title: "Director de Contenidos | FestiGame",
-        description: "Desde el 2013, y hasta el 2019, fui parte del equipo de producción para el festival de cultura gamer más importante de Chile, liderando el área de contenidos y creando experiencias de marca.",
-        action: "Cuéntame más",
-        actionHref: "#contacto",
-        images: [
-            ["https://leosalinas.com/img/works/festigame-2015-pablo-tatabo-seba-caceres-animacion-pubico.jpg?auto=format&fit=crop&w=800&q=80", "Pablo Tatabo y Seba Cáceres animando al público en FestiGame 2015"],
-            ["https://leosalinas.com/img/works/festigame-2014-estacion-mapocho.jpg?auto=format&fit=crop&w=800&q=80", "Asistentes y público en FestiGame 2014"],
-            ["https://leosalinas.com/img/works/festigame-2017-leonardo-salinas-entrevista-cnn-chile.jpg?auto=format&fit=crop&w=800&q=80", "Entrevista Leonardo Salinas en CNN Chile relacionado a FestiGame 2017"],
-            ["https://leosalinas.com/img/works/festigame-2017-mario-kempes-leonardo-salinas-fernando-palomo.jpg?auto=format&fit=crop&w=800&q=80", "Mario Kempes, Leonardo Salinas y Fernando Palomo en FestiGame 2017"],
-            ["https://leosalinas.com/img/works/festigame-2019-ed-boon-leonardo-salinas-fatal1ty.jpeg?auto=format&fit=crop&w=800&q=80", "Ed Boon, Leonardo Salinas y Fatal1ty en FestiGame 2019"],
-            ["https://leosalinas.com/img/works/festigame-2017-booth-playstation.jpg?auto=format&fit=crop&w=800&q=80", "Booth de PlayStation en FestiGame 2017"],
-            ["https://leosalinas.com/img/works/festigame-2017-entrada-publico.jpg?auto=format&fit=crop&w=800&q=80", "Entrada del público en FestiGame 2017"]
-        ]
+        category: "Estrategia y Marca",
+        title: "Juegaesports.com",
+        description: "Co-Fundador & Editor General para plataforma de noticias y contenido de esports en Latinoamérica.",
+        image: "https://leosalinas.com/img/works/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+        alt: "Juegaesports.com, Noticias y Contenido de Esports en Latinoamérica",
+        href: "https://example.com/estrategia-estudio-norte",
+        newTab: true
     },
     {
-        title: "Jefe de Comunicaciones | LUX Fight League",
-        description: "Entre 2021 y 2023, lideré el área de comunicaciones y contenidos para la liga de Artes Marciales Mixtas (MMA) más importante de Latinoamérica, desarrollando storytelling; contenidos gráficos, audiovisuales; campañas de marketing y más.",
-        action: "Revisar trabajos",
-        actionHref: "#contacto",
-        images: [
-            ["https://leosalinas.com/img/works/lux-fight-league-leonardo-marco-beltran-karate-kid.jpg?auto=format&fit=crop&w=800&q=80", "Reel Karate Kid con Marco Beltrán en LUX Fight League"],
-            ["https://leosalinas.com/img/works/lux-fight-league-leonardo-salinas-uriel-kart-challenge.jpg?auto=format&fit=crop&w=800&q=80", "Reel Uriel Kart Challenge para LUX Fight League"],
-            ["https://leosalinas.com/img/works/lux-fight-league-leonardo-salinas-lazy-boy-rodriguez.jpg?auto=format&fit=crop&w=800&q=80", "Lazy Boy Rodríguez peleando para LUX Fight League"],
-            ["https://leosalinas.com/img/works/lux-fight-league-lux-030-fight-card.jpg?auto=format&fit=crop&w=800&q=80", "Reel LUX 030 Fight Card para LUX Fight League"],
-            ["https://leosalinas.com/img/works/lux-fight-league-leonardo-salinas-favoritos-underdogs.jpg?auto=format&fit=crop&w=800&q=80", "Votación Favoritos vs Underdogs para LUX Fight League"],
-            ["https://leosalinas.com/img/works/lux-fight-league-leonardo-salinas-lux-023-marco-beltran-fito-rubio.jpg?auto=format&fit=crop&w=800&q=80", "Afiche LUX 023 Marco Beltrán vs Fito Rubio para LUX Fight League"]
-        ]
+        category: "Estrategia y Marca",
+        title: "Kaos Latin Gamers",
+        description: "Director de Proyecto para relanzamiento de club de esports con presencia en Chile.",
+        image: "https://leosalinas.com/img/works/agardash-kaos-latin-gamers-klg-fifa-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+        alt: "Kaos Latin Gamers. Club de esports con sede en Chile.",
+        href: "#contacto",
+        newTab: false
     },
     {
-        title: "Editor General | Juegaesports.com",
-        description: "Levantamiento de proyecto web relacionado a contenido exclusivo de esports en Latinoamérica.",
-        action: "Ver proyecto",
-        actionHref: "#contacto",
-        //external: true,
-        images: [
-            ["https://leosalinas.com/img/works/juegaesports-adverso-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=800&q=80", "Adverso Valorant en Juegaesports.com"],
-            ["https://leosalinas.com/img/works/juegaesports-kru-blaze-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=800&q=80", "KRU Blaze Valorant en Juegaesports.com"],
-            ["https://leosalinas.com/img/works/juegaesports-valorant-masters-santiago-leonardo-salinas.jpg?auto=format&fit=crop&w=800&q=80", "Valorant Masters en Juegaesports.com"],
-            ["https://leosalinas.com/img/works/juegaesports-ea-fc-26-leonardo-salinas.jpg?auto=format&fit=crop&w=800&q=80", "EA FC 26 en Juegaesports.com"],
-            ["https://leosalinas.com/img/works/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=800&q=80", "MMONCH Valorant en Juegaesports.com"],
-            ["https://leosalinas.com/img/works/juegaesports-counter-strike-2-leonardo-salinas.jpg?auto=format&fit=crop&w=800&q=80", "Counter-Strike 2 en Juegaesports.com"],
-            ["https://leosalinas.com/img/works/juegaesports-vct-americas-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=800&q=80", "VCT Americas Valorant en Juegaesports.com"],
-            ["https://leosalinas.com/img/works/juegaesports-agardash-ea-fc-leonardo-salinas.jpg?auto=format&fit=crop&w=800&q=80", ""]
-        ]
+        category: "Estrategia y Marca",
+        title: "Ring Royale",
+        description: "Lead de Estrategia de Marca y Comunicación en la fase de pre-lanzamiento de nuevo evento de boxeo entre celebridades en México.",
+        image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=900&q=80",
+        alt: "Equipo trabajando en una estrategia de marca",
+        href: "#contacto",
+        newTab: false
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "Symi Pastisseria",
+        description: "Especialista en Marca y Contenido Digital para exclusiva pastelería artesanal en el barrio de Sants, en Barcelona.",
+        image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+        alt: "Reunión de trabajo para una estrategia de comunicación",
+        href: "https://example.com/mercado-vivo",
+        newTab: true
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "Sprint Gaming",
+        description: "Social Media Lead para empresa de servicios de casino en vivo con ambientación temática digital, con sede en Paraguay.",
+        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+        alt: "Espacio creativo preparado para una sesión de marca",
+        href: "#contacto",
+        newTab: false
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "Land Vegas",
+        description: "Lead de Comunicación y Marca para proyecto de casino y entretenimiento digital a través de gafas de Realidad Virtual (VR).",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
+        alt: "Documentos de planificación sobre una mesa",
+        href: "https://example.com/marca-horizonte",
+        newTab: true
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "LUX Fight League",
+        description: "Jefe de Comunicaciones para la liga de Artes Marciales Mixtas (MMA) con más reconocimiento en México y Latinoamérica.",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
+        alt: "Documentos de planificación sobre una mesa",
+        href: "https://example.com/marca-horizonte",
+        newTab: true
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "Rostisseria Tony's",
+        description: "Levantamiento de Marca y Branding para popular local de pollos asados y comida preparada en Palamós, Girona.",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
+        alt: "Documentos de planificación sobre una mesa",
+        href: "https://example.com/marca-horizonte",
+        newTab: true
+    },
+    {
+        category: "Eventos",
+        title: "FestiGame",
+        description: "Director de Contenidos para uno de los eventos masivos de videojuegos y cultura gaming más importante de Sudamérica.",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
+        alt: "Retrato de una persona en exterior",
+        href: "#contacto",
+        newTab: false
+    },
+    {
+        category: "Fotos",
+        title: "Luz de tarde",
+        description: "La última luz sobre el paisaje",
+        image: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=80",
+        alt: "Paisaje iluminado por la luz cálida del atardecer",
+        href: "https://example.com/fotos-luz-de-tarde",
+        newTab: true
+    },
+    {
+        category: "Fotos",
+        title: "Calles de Gràcia",
+        description: "Una mirada cotidiana a Gràcia",
+        image: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=80",
+        alt: "Calle de ciudad al anochecer",
+        href: "#contacto",
+        newTab: false
+    },
+    {
+        category: "Fotos",
+        title: "Texturas del barrio",
+        description: "Detalles que cuentan la vida del barrio",
+        image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80",
+        alt: "Detalle arquitectónico de un edificio",
+        href: "https://example.com/fotos-texturas",
+        newTab: true
+    },
+    {
+        category: "Fotos",
+        title: "Un domingo tranquilo",
+        description: "Una pausa entre montañas y lagos",
+        image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80",
+        alt: "Paisaje de montaña junto a un lago",
+        href: "#contacto",
+        newTab: false
+    },
+    {
+        category: "Vídeos",
+        title: "Historias en movimiento",
+        description: "Pequeñas historias, grandes momentos",
+        image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80",
+        alt: "Cámara de vídeo preparada para grabar",
+        href: "https://example.com/video-historias",
+        newTab: true
+    },
+    {
+        category: "Vídeos",
+        title: "Sesión en el estudio",
+        description: "Detrás de cámaras en una producción",
+        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80",
+        alt: "Equipo de rodaje durante una producción audiovisual",
+        href: "#contacto",
+        newTab: false
+    },
+    {
+        category: "Vídeos",
+        title: "Crónicas del festival",
+        description: "La energía de un festival en vivo",
+        image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80",
+        alt: "Público disfrutando de un festival",
+        href: "https://example.com/video-festival",
+        newTab: true
+    },
+    {
+        category: "Vídeos",
+        title: "Conversaciones reales",
+        description: "Voces y relatos en primera persona",
+        image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=900&q=80",
+        alt: "Micrófono en un espacio de grabación",
+        href: "#contacto",
+        newTab: false
+    },
+    {
+        category: "Vídeos",
+        title: "Un minuto de Barcelona",
+        description: "Barcelona en sesenta segundos",
+        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80",
+        alt: "Cámara capturando una escena urbana",
+        href: "https://example.com/video-barcelona",
+        newTab: true
+    },
+    {
+        category: "Proyectos Propios",
+        title: "Mapa de rincones",
+        description: "Una guía personal de rincones favoritos",
+        image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=80",
+        alt: "Mapa abierto para planificar una ruta",
+        href: "#contacto",
+        newTab: false
+    },
+    {
+        category: "Proyectos Propios",
+        title: "Archivo de ideas",
+        description: "Un espacio para guardar nuevas ideas",
+        image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80",
+        alt: "Cuaderno abierto con notas e ideas",
+        href: "https://example.com/archivo-de-ideas",
+        newTab: true
+    },
+    {
+        category: "Proyectos Propios",
+        title: "Ventanas de Barcelona",
+        description: "Postales de la ciudad entre edificios",
+        image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=900&q=80",
+        alt: "Vista de una ciudad entre edificios",
+        href: "#contacto",
+        newTab: false
+    },
+    {
+        category: "Proyectos Propios",
+        title: "Cuaderno de barrio",
+        description: "Notas sobre la vida cotidiana del barrio",
+        image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80",
+        alt: "Libros y cuaderno sobre una mesa",
+        href: "https://example.com/cuaderno-de-barrio",
+        newTab: true
+    },
+    {
+        category: "Proyectos Propios",
+        title: "Pequeñas exploraciones",
+        description: "Rutas para salir a explorar sin prisa",
+        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+        alt: "Paisaje natural durante una exploración",
+        href: "#contacto",
+        newTab: false
     }
 ];
 
@@ -147,12 +309,12 @@ function shuffleItems(items) {
     return shuffled;
 }
 
-// Dibuja las fotografías en orden aleatorio y los proyectos con sus imágenes.
+// Mantiene la cuadrícula fotográfica existente y sus datos editables.
 function renderPhotos() {
     const randomizedPhotos = shuffleItems(photos);
 
-    const renderGroup = (group, offset) => group.map((photo, index) => `
-        <button class="photo-card" type="button" data-photo-index="${offset + index}" aria-label="Ver fotografía: ${photo.alt}">
+    const renderGroup = group => group.map(photo => `
+        <button class="photo-card" type="button" data-photo-index="${photos.indexOf(photo)}" aria-label="Ver fotografía: ${photo.alt}">
             <span class="photo-frame photo-frame-${photo.frameSize}" style="--frame-color: ${photo.frame}">
                 <span class="photo-image" style="--photo-ratio: ${photo.ratio || "4 / 5"}">
                     <img src="${photo.image}" alt="${photo.alt}" loading="lazy" width="800" height="1200">
@@ -161,78 +323,58 @@ function renderPhotos() {
         </button>
     `).join("");
 
-    document.querySelector("#photo-grid-first").innerHTML = renderGroup(randomizedPhotos.slice(0, 4), 0);
-    document.querySelector("#photo-grid-second").innerHTML = renderGroup(randomizedPhotos.slice(4), 4);
+    document.querySelector("#photo-grid-first").innerHTML = renderGroup(randomizedPhotos.slice(0, 4));
+    document.querySelector("#photo-grid-second").innerHTML = renderGroup(randomizedPhotos.slice(4));
 }
 
-function renderProjects() {
-    document.querySelector("#project-list").innerHTML = projects.map((project, index) => `
-        <article class="project">
-            <div class="project-heading">
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-            </div>
-            <div class="carousel-wrap">
-                <button class="carousel-arrow previous" type="button" data-carousel="${index}" data-direction="-1" aria-label="Anterior imagen">‹</button>
-                <div class="project-carousel" id="carousel-${index + 1}">
-                    ${shuffleItems(project.images).map(([src, alt]) => `<img src="${src}" alt="${alt}" loading="lazy">`).join("")}
+// Crea tarjetas Bootstrap; cada destino y la opción de nueva pestaña se configuran en galleryItems.
+function renderGallery() {
+    document.querySelector("#gallery-grid").innerHTML = galleryItems.map(item => `
+        <div class="col gallery-item" data-gallery-category="${item.category}">
+            <article class="card gallery-card h-100">
+                <img class="card-img-top gallery-card-image" src="${item.image}" alt="${item.alt}" loading="lazy" width="900" height="1125">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title h5">${item.title}</h3>
+                    <p class="card-text gallery-card-description">${item.description}</p>
+                    <a class="btn btn-outline-dark align-self-start" href="${item.href}" ${item.newTab ? 'target="_blank" rel="noopener noreferrer"' : ""}>Ver más</a>
                 </div>
-                <button class="carousel-arrow next" type="button" data-carousel="${index}" data-direction="1" aria-label="Siguiente imagen">›</button>
-            </div>
-            <a class="project-action" href="${project.actionHref}" ${project.external ? 'target="_blank" rel="noopener noreferrer"' : ""}>${project.action}</a>
-        </article>
+            </article>
+        </div>
     `).join("");
 }
 
-// Permite arrastrar los carruseles y repetir las imágenes al llegar a sus extremos.
-function enableCarouselDragging() {
-    document.querySelectorAll(".project-carousel").forEach(carousel => {
-        const originals = [...carousel.children];
-        const cloneItems = () => originals.map(image => {
-            const clone = image.cloneNode(true);
-            clone.alt = "";
-            clone.setAttribute("aria-hidden", "true");
-            return clone;
-        });
-        carousel.append(...cloneItems(), ...cloneItems());
+// Muestra únicamente las tarjetas de la categoría seleccionada y actualiza el estado accesible.
+function bindGalleryFilters() {
+    document.querySelector(".gallery-filters").addEventListener("click", event => {
+        const button = event.target.closest("[data-gallery-filter]");
+        if (!button) return;
 
-        const gap = parseFloat(getComputedStyle(carousel).columnGap) || 0;
-        const setWidth = originals.reduce((width, image) => width + image.getBoundingClientRect().width, 0)
-            + gap * originals.length;
-        carousel.scrollLeft = setWidth;
-        carousel.addEventListener("scroll", () => {
-            if (carousel.scrollLeft <= 5) {
-                carousel.scrollLeft += setWidth;
-            } else if (carousel.scrollLeft >= setWidth * 2 - 5) {
-                carousel.scrollLeft -= setWidth;
+        const category = button.dataset.galleryFilter;
+        document.querySelectorAll("[data-gallery-filter]").forEach(filterButton => {
+            const isActive = filterButton === button;
+            filterButton.classList.toggle("active", isActive);
+            filterButton.setAttribute("aria-pressed", String(isActive));
+        });
+
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        document.querySelectorAll(".gallery-item").forEach(item => {
+            const isVisible = category === "all" || item.dataset.galleryCategory === category;
+            item.getAnimations().forEach(animation => animation.cancel());
+            item.classList.toggle("d-none", !isVisible);
+
+            // Anima las tarjetas que aparecen y respeta la preferencia de movimiento reducido.
+            if (isVisible && !reduceMotion) {
+                item.animate([
+                    { opacity: 0, transform: "translateY(.5rem) scale(.98)" },
+                    { opacity: 1, transform: "translateY(0) scale(1)" }
+                ], { duration: 240, easing: "ease-out" });
             }
         });
-
-        let startX = 0;
-        let startScroll = 0;
-
-        carousel.addEventListener("pointerdown", event => {
-            if (event.pointerType === "mouse" && event.button !== 0) return;
-            startX = event.clientX;
-            startScroll = carousel.scrollLeft;
-            carousel.classList.add("is-dragging");
-            carousel.setPointerCapture(event.pointerId);
-        });
-
-        carousel.addEventListener("pointermove", event => {
-            if (!carousel.hasPointerCapture(event.pointerId)) return;
-            carousel.scrollLeft = startScroll - (event.clientX - startX) * 1.5;
-        });
-
-        const stopDragging = () => carousel.classList.remove("is-dragging");
-        carousel.addEventListener("pointerup", stopDragging);
-        carousel.addEventListener("pointercancel", stopDragging);
-        carousel.addEventListener("lostpointercapture", stopDragging);
     });
 }
 
-// Conecta las tarjetas, el modal fotográfico y las flechas de los carruseles.
-function bindInteractions() {
+// Conecta las fotografías con el modal de Bootstrap.
+function bindPhotoModal() {
     const modalElement = document.querySelector("#photo-modal");
     const photoModal = bootstrap.Modal.getOrCreateInstance(modalElement);
 
@@ -247,18 +389,6 @@ function bindInteractions() {
         document.querySelector("#modal-location").textContent = photo.location;
         photoModal.show();
     });
-
-    document.querySelector("#project-list").addEventListener("click", event => {
-        const button = event.target.closest("[data-carousel]");
-        if (!button) return;
-        const carousel = document.querySelector(`#carousel-${Number(button.dataset.carousel) + 1}`);
-        carousel.scrollBy({
-            left: Number(button.dataset.direction) * carousel.clientWidth * .65,
-            behavior: "smooth"
-        });
-    });
-
-    enableCarouselDragging();
 }
 
 // Inicializa la página cuando los componentes compartidos ya están disponibles.
@@ -271,6 +401,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     renderPhotos();
-    renderProjects();
-    bindInteractions();
+    renderGallery();
+    bindGalleryFilters();
+    bindPhotoModal();
 });

@@ -32,19 +32,24 @@
             <div class="photo-grid" id="photo-grid-second" aria-label="Siguientes fotografías"></div>
         </section>
 
-        <section class="projects-section py-5" id="trabajos">
+        <section class="projects-section py-5" id="portfolio">
             <div class="container-xl py-4">
                 <div class="section-heading text-center mx-auto">
-                    <span class="eyebrow">Trabajos</span>
-                    <h2>Las cosas que he hecho para pagar el alquiler</h2>
-                    <p>En 1996, a los 12 años, me apasioné por el mundo internet. El resto no sabría cómo describirlo. Todo ha sido una serie de decisiones, experiencias y aprendizajes.</p>
+                    <span class="eyebrow">Portfolio</span>
+                    <h2>Las cosas que hago para pagar el alquiler</h2>
+                    <p>Y otras cuantas que hago por amor. Todo comenzó en 1996. A los 12 años me apasioné por internet, computadoras y hacer cosas. El resto no sabría cómo describirlo.</p>
                 </div>
-                <div class="projects-divider" aria-hidden="true">
-                    <svg viewBox="0 0 48 48" focusable="false">
-                        <path d="M24 5v34M10 25l14 14 14-14" />
-                    </svg>
+                <!-- Los filtros se basan en categorías y usan botones accesibles de Bootstrap. -->
+                <div class="gallery-filters d-flex flex-wrap justify-content-center gap-2 mb-4" role="group" aria-label="Filtrar proyectos por categoría">
+                    <button class="btn btn-outline-dark active" type="button" data-gallery-filter="all" aria-pressed="true">Todos</button>
+                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Estrategia y Marca" aria-pressed="false">Estrategia y Marca</button>
+                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Eventos" aria-pressed="false">Eventos</button>
+                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Fotos" aria-pressed="false">Fotos</button>
+                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Vídeos" aria-pressed="false">Vídeos</button>
+                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Proyectos Propios" aria-pressed="false">Proyectos Propios</button>
                 </div>
-                <div id="project-list"></div>
+                <!-- Bootstrap adapta las columnas de una tarjeta en móvil, tablet y escritorio. -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-4" id="gallery-grid" aria-live="polite"></div>
             </div>
         </section>
 
@@ -62,6 +67,7 @@
 
     <div data-include="components/footer.html"></div>
 
+    <!-- Modal para ampliar una de las fotografías de la cuadrícula superior. -->
     <div class="modal fade" id="photo-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content photo-modal-content">
