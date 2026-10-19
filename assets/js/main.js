@@ -81,8 +81,26 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Juegaesports.com",
         description: "Co-Fundador & Editor General para plataforma de noticias y contenido de esports en Latinoamérica.",
-        image: "https://leosalinas.com/img/works/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+        image: "https://leosalinas.com/img/portfolio/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
         alt: "Juegaesports.com, Noticias y Contenido de Esports en Latinoamérica",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Mmonch, jugadora profesional de VALORANT, Juegaesports.com"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/counter-strike-juegaesports-almendruza-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "El fracaso silencioso de Counter-Strike 2, escrito por Almendruza, Juegaesports.com"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/ea-fc-26-global-qualifier-juegaesports-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Los mejores jugadores de Latinoamérica rumbo al Global Qualifier EA FC 26"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/adverso-valorant-juegaesports-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Adverso, jugador profesional de VALORANT, Juegaesports.com"
+            }
+        ],
         href: "https://example.com/estrategia-estudio-norte",
         newTab: true
     },
@@ -90,7 +108,25 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Kaos Latin Gamers",
         description: "Director de Proyecto para relanzamiento de club de esports con presencia en Chile.",
-        image: "https://leosalinas.com/img/works/agardash-kaos-latin-gamers-klg-fifa-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/agardash-kaos-latin-gamers-klg-fifa-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Matías 'Agardash' Flores, Pro Player EA FC, Kaos Latin Gamers"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/emilio-cordero-kaos-latin-gamers-klg-pokemon-tcg-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Emilio Cordero, Pro Player Pokémon TCG, Kaos Latin Gamers"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/juan-andree-kaos-latin-gamers-klg-pokemon-tcg-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Juan Andree, Pro Player Pokémon TCG, Kaos Latin Gamers"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/valorant-kaos-latin-gamers-klg-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Equipo VALORANT, Kaos Latin Gamers"
+            }
+        ],
+        image: "https://leosalinas.com/img/portfolio/agardash-kaos-latin-gamers-klg-fifa-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
         alt: "Kaos Latin Gamers. Club de esports con sede en Chile.",
         href: "#contacto",
         newTab: false
@@ -99,7 +135,20 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Ring Royale",
         description: "Lead de Estrategia de Marca y Comunicación en la fase de pre-lanzamiento de nuevo evento de boxeo entre celebridades en México.",
-        image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=900&q=80",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/ring-royale-karely-ruiz-marcela-mistral-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Karely Ruiz vs Marcela Mistral, Ring Royale"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/ring-royale-poncho-de-nigris-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Poncho de Nigris, Ring Royale"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/ring-royale-arena-monterrey-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Ring Royale, 15 de marzo 2026, Arena Monterrey"
+            }
+        ],
         alt: "Equipo trabajando en una estrategia de marca",
         href: "#contacto",
         newTab: false
@@ -111,6 +160,7 @@ const galleryItems = [
         image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
         alt: "Reunión de trabajo para una estrategia de comunicación",
         href: "https://example.com/mercado-vivo",
+        buttonText: "Ver proyecto",
         newTab: true
     },
     {
@@ -150,7 +200,7 @@ const galleryItems = [
         newTab: true
     },
     {
-        category: "Eventos",
+        categories: ["Estrategia y Marca", "Eventos"],
         title: "FestiGame",
         description: "Director de Contenidos para uno de los eventos masivos de videojuegos y cultura gaming más importante de Sudamérica.",
         image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
@@ -196,8 +246,8 @@ const galleryItems = [
     },
     {
         category: "Vídeos",
-        title: "Historias en movimiento",
-        description: "Pequeñas historias, grandes momentos",
+        title: "Jazztick @ Barcelona",
+        description: "Vídeo presentación",
         image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80",
         alt: "Cámara de vídeo preparada para grabar",
         href: "https://example.com/video-historias",
@@ -330,17 +380,120 @@ function renderPhotos() {
 // Crea tarjetas Bootstrap; cada destino y la opción de nueva pestaña se configuran en galleryItems.
 function renderGallery() {
     document.querySelector("#gallery-grid").innerHTML = galleryItems.map(item => `
-        <div class="col gallery-item" data-gallery-category="${item.category}">
+        <div class="col gallery-item" data-gallery-categories="${(item.categories || [item.category]).join("|")}">
             <article class="card gallery-card h-100">
-                <img class="card-img-top gallery-card-image" src="${item.image}" alt="${item.alt}" loading="lazy" width="900" height="1125">
+                ${renderGalleryImage(item)}
                 <div class="card-body d-flex flex-column">
                     <h3 class="card-title h5">${item.title}</h3>
                     <p class="card-text gallery-card-description">${item.description}</p>
-                    <a class="btn btn-outline-dark align-self-start" href="${item.href}" ${item.newTab ? 'target="_blank" rel="noopener noreferrer"' : ""}>Ver más</a>
+                    <a class="btn btn-outline-dark align-self-start mt-auto" href="${item.href}" ${item.newTab ? 'target="_blank" rel="noopener noreferrer"' : ""}>${item.buttonText || "Ver más"}</a>
                 </div>
             </article>
         </div>
     `).join("");
+}
+
+// Los ítems con varias imágenes usan un carrusel; el resto conserva su imagen estática.
+function renderGalleryImage(item) {
+    if (!item.images || item.images.length < 2) {
+        return `<img class="card-img-top gallery-card-image" src="${item.image}" alt="${item.alt}" loading="lazy" width="900" height="1125">`;
+    }
+
+    return `
+        <div class="gallery-carousel" data-gallery-carousel role="region" aria-roledescription="carrusel" aria-label="Imágenes de ${item.title}">
+            <div class="gallery-carousel-track" data-carousel-track style="--slide-offset: 0%">
+                ${item.images.map((image, index) => `
+                    <div class="gallery-carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="${index + 1} de ${item.images.length}" aria-hidden="${index !== 0}">
+                        <img class="gallery-card-image" src="${image.src}" alt="${image.alt}" loading="lazy" width="900" height="1125" draggable="false">
+                    </div>
+                `).join("")}
+            </div>
+            <button class="gallery-carousel-arrow previous" type="button" data-gallery-carousel-step="-1" aria-label="Imagen anterior: ${item.title}"><span aria-hidden="true">‹</span></button>
+            <button class="gallery-carousel-arrow next" type="button" data-gallery-carousel-step="1" aria-label="Imagen siguiente: ${item.title}"><span aria-hidden="true">›</span></button>
+        </div>
+    `;
+}
+
+// Añade controles de flechas y desplazamiento por arrastre a cada carrusel configurado.
+function bindGalleryCarousels() {
+    document.querySelectorAll("[data-gallery-carousel]").forEach(carousel => {
+        const track = carousel.querySelector("[data-carousel-track]");
+        const slides = [...track.children];
+        let activeIndex = 0;
+        let pointerStartX = 0;
+        let pointerStartY = 0;
+        let dragOffset = 0;
+        let isHorizontalDrag = false;
+        let activePointerId = null;
+
+        const showSlide = index => {
+            activeIndex = (index + slides.length) % slides.length;
+            track.style.setProperty("--slide-offset", `${activeIndex * -100}%`);
+            track.style.setProperty("--drag-offset", "0px");
+            slides.forEach((slide, slideIndex) => {
+                slide.setAttribute("aria-hidden", String(slideIndex !== activeIndex));
+            });
+        };
+
+        carousel.addEventListener("click", event => {
+            const button = event.target.closest("[data-gallery-carousel-step]");
+            if (!button) return;
+
+            showSlide(activeIndex + Number(button.dataset.galleryCarouselStep));
+        });
+
+        carousel.addEventListener("pointerdown", event => {
+            if (!event.isPrimary || (event.pointerType === "mouse" && event.button !== 0)) return;
+            if (event.target.closest("[data-gallery-carousel-step]")) return;
+
+            pointerStartX = event.clientX;
+            pointerStartY = event.clientY;
+            dragOffset = 0;
+            isHorizontalDrag = false;
+            activePointerId = event.pointerId;
+            carousel.setPointerCapture(event.pointerId);
+        });
+
+        carousel.addEventListener("pointermove", event => {
+            if (!carousel.hasPointerCapture(event.pointerId)) return;
+
+            const deltaX = event.clientX - pointerStartX;
+            const deltaY = event.clientY - pointerStartY;
+            if (!isHorizontalDrag && Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 5) {
+                isHorizontalDrag = true;
+                carousel.classList.add("is-dragging");
+            }
+
+            if (!isHorizontalDrag) return;
+            event.preventDefault();
+            dragOffset = deltaX;
+            track.style.setProperty("--drag-offset", `${dragOffset}px`);
+        });
+
+        const finishDrag = event => {
+            if (event.pointerId !== activePointerId) return;
+            const shouldAdvance = event.type === "pointerup"
+                && isHorizontalDrag
+                && Math.abs(dragOffset) > carousel.clientWidth * .15;
+            activePointerId = null;
+            if (carousel.hasPointerCapture(event.pointerId)) {
+                carousel.releasePointerCapture(event.pointerId);
+            }
+            carousel.classList.remove("is-dragging");
+
+            if (shouldAdvance) {
+                showSlide(activeIndex + (dragOffset < 0 ? 1 : -1));
+            } else {
+                track.style.setProperty("--drag-offset", "0px");
+            }
+
+            isHorizontalDrag = false;
+        };
+
+        carousel.addEventListener("pointerup", finishDrag);
+        carousel.addEventListener("pointercancel", finishDrag);
+        carousel.addEventListener("lostpointercapture", finishDrag);
+    });
 }
 
 // Muestra únicamente las tarjetas de la categoría seleccionada y actualiza el estado accesible.
@@ -358,7 +511,8 @@ function bindGalleryFilters() {
 
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         document.querySelectorAll(".gallery-item").forEach(item => {
-            const isVisible = category === "all" || item.dataset.galleryCategory === category;
+            const itemCategories = item.dataset.galleryCategories.split("|");
+            const isVisible = category === "all" || itemCategories.includes(category);
             item.getAnimations().forEach(animation => animation.cancel());
             item.classList.toggle("d-none", !isVisible);
 
@@ -402,6 +556,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     renderPhotos();
     renderGallery();
+    bindGalleryCarousels();
     bindGalleryFilters();
     bindPhotoModal();
 });

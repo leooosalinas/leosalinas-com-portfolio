@@ -274,6 +274,74 @@ a {
     object-fit: cover;
 }
 
+.gallery-carousel {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: #e5e3dd;
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.gallery-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(calc(var(--slide-offset, 0%) + var(--drag-offset, 0px)), 0, 0);
+    transition: transform .3s ease;
+}
+
+.gallery-carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-carousel .gallery-card-image {
+    height: 100%;
+    -webkit-user-drag: none;
+}
+
+.gallery-carousel.is-dragging {
+    cursor: grabbing;
+}
+
+.gallery-carousel.is-dragging .gallery-carousel-track {
+    transition: none;
+}
+
+.gallery-carousel-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    display: grid;
+    width: 2rem;
+    height: 2.75rem;
+    padding: 0;
+    place-items: center;
+    transform: translateY(-50%);
+    border: 0;
+    background: #0009;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    transition: background-color .2s ease;
+}
+
+.gallery-carousel-arrow:hover,
+.gallery-carousel-arrow:focus-visible {
+    background: #000;
+}
+
+.gallery-carousel-arrow.previous {
+    left: .5rem;
+}
+
+.gallery-carousel-arrow.next {
+    right: .5rem;
+}
+
 .gallery-card .card-body {
     padding: .85rem;
 }
@@ -286,6 +354,9 @@ a {
 }
 
 .gallery-card-description {
+    /* Reserva el alto de tres líneas para alinear los botones entre tarjetas. */
+    min-height: 5em;
+    line-height: 1.35;
     margin-bottom: .55rem;
     color: var(--muted);
     font-size: .75rem;
@@ -382,6 +453,12 @@ a {
 .modal-caption small {
     color: #aaa;
     line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-carousel-track {
+        transition: none;
+    }
 }
 
 /* Ajustes de columnas y navegación para tablet y móvil. */
