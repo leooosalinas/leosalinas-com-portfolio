@@ -520,6 +520,7 @@ const galleryItems = [
         href: "#",
         newTab: true
     },
+    /*
     {
         category: "Vídeos",
         title: "Conversaciones reales",
@@ -583,6 +584,7 @@ const galleryItems = [
         href: "#contacto",
         newTab: false
     }
+        */
 ];
 
 // Inserta el header y el footer compartidos en cada página.
