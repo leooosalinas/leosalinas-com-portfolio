@@ -348,7 +348,7 @@ a {
 
 .gallery-card .card-title {
     font-weight: 500;
-    font-size: .95rem;
+    font-size: 1rem;
     line-height: 1.25;
     margin-bottom: .35rem;
 }
@@ -359,7 +359,7 @@ a {
     line-height: 1.35;
     margin-bottom: .55rem;
     color: var(--muted);
-    font-size: .75rem;
+    font-size: .85rem;
 }
 
 .gallery-card .btn {

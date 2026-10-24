@@ -101,7 +101,7 @@ const galleryItems = [
                 alt: "Adverso, jugador profesional de VALORANT, Juegaesports.com"
             }
         ],
-        href: "https://example.com/estrategia-estudio-norte",
+        href: "#",
         newTab: true
     },
     {
@@ -126,9 +126,7 @@ const galleryItems = [
                 alt: "Equipo VALORANT, Kaos Latin Gamers"
             }
         ],
-        image: "https://leosalinas.com/img/portfolio/agardash-kaos-latin-gamers-klg-fifa-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-        alt: "Kaos Latin Gamers. Club de esports con sede en Chile.",
-        href: "#contacto",
+        href: "#",
         newTab: false
     },
     {
@@ -149,126 +147,377 @@ const galleryItems = [
                 alt: "Ring Royale, 15 de marzo 2026, Arena Monterrey"
             }
         ],
-        alt: "Equipo trabajando en una estrategia de marca",
-        href: "#contacto",
+        href: "#",
+        newTab: false
+    },
+    {
+        categories: ["Estrategia y Marca", "Eventos"],
+        title: "FestiGame Chile & Colombia",
+        description: "Director de Contenidos para uno de los eventos masivos de videojuegos y cultura gaming más importante de Sudamérica.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/festigame-coca-cola-chile-2018-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "FestiGame Coca-Cola 2018"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/festigame-booth-playstation-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "FestiGame, booth PlayStation"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/festigame-publico-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "FestiGame, público en escenario principal"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/festigame-publico-entradas-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "FestiGame, entrada público"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/festigame-fifa-stage-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "FestiGame, Final FIFA, relatado por Fernando Palomo y Mario Alberto Kempes"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/festigame-just-dance-pedro-morales-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "FestiGame, competencia Just Dance, Pedro Morales"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/festigame-fanta-animadores-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "FestiGame Fanta, animadores"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/festigame-entrevista-cnn-chile-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "FestiGame, entrevista Leonardo Salinas en CNN Chile"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/festigame-ed-boon-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Ed Boon (co-creador de Mortal Kombat) junto a Leonardo Salinas, Director de Contenido de FestiGame"
+            }
+        ],
+        href: "#",
+        newTab: false
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "LUX Fight League",
+        description: "Jefe de Comunicaciones para la liga de Artes Marciales Mixtas (MMA) con más reconocimiento en México y Latinoamérica.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/lux-fight-league-leonardo-salinas-lux-023-marco-beltran-fito-rubio.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "LUX Fight League, LUX 023, Marco Beltrán vs Fito Rubio"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/lux-fight-league-lux-030-fight-card.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "LUX Fight League, Fight Card, LUX 030"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/lux-fight-league-030-bam-bam-valenzuela-nayib-lopez-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "LUX Fight League, Ivan Bam Bam Valenzuela vs Nayib El Cachorro López"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/lux-fight-league-lux-021-monterrey-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "LUX Fight League, LUX 021, Ponte Al Tiro Monterrey"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/lux-fight-league-erik-silva-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "LUX Fight League, Erik The King Silva, Featherweight Champion"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/lux-fight-league-leonardo-salinas-lazy-boy-rodriguez.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "LUX Fight League, Lazy Boy Rodríguez"
+            }
+        ],
+        href: "#",
+        newTab: true
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "Land Vegas",
+        description: "Lead de Comunicación y Marca para proyecto de casino y entretenimiento digital a través de gafas de Realidad Virtual (VR).",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/land-vegas-vr-person-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Land Vegas, Gaming Metaverse, VR Person"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/land-vegas-event-g2e-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Land Vegas, Gaming Metaverse, G2E Event"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/land-vegas-gaming-metaverse-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Land Vegas, Gaming Metaverse"
+            }
+        ],
+        href: "#",
+        newTab: true
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "Sprint Gaming",
+        description: "Social Media Lead para empresa de servicios de casino en vivo, con sede en San Lorenzo, Paraguay.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/sprint-gaming-live-dealer-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Live Dealer de Sprint Gaming"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/sprint-gaming-mobile-games-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Mobile Games de Sprint Gaming"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/sprint-gaming-jesus-campos-ceo-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Jesús Campos, CEO de Sprint Gaming"
+            }
+        ],
+        href: "#",
         newTab: false
     },
     {
         category: "Estrategia y Marca",
         title: "Symi Pastisseria",
         description: "Especialista en Marca y Contenido Digital para exclusiva pastelería artesanal en el barrio de Sants, en Barcelona.",
-        image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
-        alt: "Reunión de trabajo para una estrategia de comunicación",
-        href: "https://example.com/mercado-vivo",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/symi-pastisseria-dulces-historias-amor-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Dulces historias de amor, creadas por Symi Pastisseria"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/symi-pastisseria-bombones-san-valentin-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Bombones de San Valentín en Symi Pastisseria"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/symi-pastisseria-postre-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Postre en Symi Pastisseria"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/symi-pastisseria-obrador-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Obrador Symi Pastisseria"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/symi-pastisseria-linda-parenzan-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Linda Parenzan, fundadora de Symi Pastisseria"
+            }
+        ],
+        href: "#",
         buttonText: "Ver proyecto",
-        newTab: true
-    },
-    {
-        category: "Estrategia y Marca",
-        title: "Sprint Gaming",
-        description: "Social Media Lead para empresa de servicios de casino en vivo con ambientación temática digital, con sede en Paraguay.",
-        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
-        alt: "Espacio creativo preparado para una sesión de marca",
-        href: "#contacto",
-        newTab: false
-    },
-    {
-        category: "Estrategia y Marca",
-        title: "Land Vegas",
-        description: "Lead de Comunicación y Marca para proyecto de casino y entretenimiento digital a través de gafas de Realidad Virtual (VR).",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
-        alt: "Documentos de planificación sobre una mesa",
-        href: "https://example.com/marca-horizonte",
-        newTab: true
-    },
-    {
-        category: "Estrategia y Marca",
-        title: "LUX Fight League",
-        description: "Jefe de Comunicaciones para la liga de Artes Marciales Mixtas (MMA) con más reconocimiento en México y Latinoamérica.",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
-        alt: "Documentos de planificación sobre una mesa",
-        href: "https://example.com/marca-horizonte",
         newTab: true
     },
     {
         category: "Estrategia y Marca",
         title: "Rostisseria Tony's",
         description: "Levantamiento de Marca y Branding para popular local de pollos asados y comida preparada en Palamós, Girona.",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
-        alt: "Documentos de planificación sobre una mesa",
-        href: "https://example.com/marca-horizonte",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/rostisseria-tonys-carta-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Rostisseria Tony's, Carta"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/rostisseria-tonys-motos-delivery-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Rostisseria Tony's, Moto Delivery"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/rostisseria-tonys-local-palamos-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Rostisseria Tony's, Local, Palamós, Girona"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/rostisseria-tonys-logo-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Rostisseria Tony's, Logo"
+            }
+        ],
+        href: "#",
+        newTab: true
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "Atòmïc Bar",
+        description: "Desarrollo de carta online y QR de acceso para popular bar en el centro de La Vila de Gràcia, en Barcelona",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/atomic-bar-homepage-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Atòmïc Bar, Homepage"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/atomic-bar-carta-online-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Atòmïc Bar, Carta Online"
+            }
+        ],
+        href: "#",
+        newTab: true
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "Nailash Experience",
+        description: "Lanzamiento integral de marca y estrategia visual para Centro de Estética en El Prat de Llobregat",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/nailash-experience-papeleria-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Nailash Experience, Papelería"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/nailash-experience-carta-servicios-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Nailash Experience, Carta de Servicios"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/la-femme-beauty-alba-grima-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "La Femme Beauty, Alba Grima"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/nailash-experience-unas-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Nailash Experience, Servicio de Uñas"
+            }
+        ],
+        href: "#",
+        newTab: false
+    },
+    {
+        category: "Estrategia y Marca",
+        title: "Coworking Epicentre Palamós",
+        description: "Desarrollo de contenido corporativo para las redes sociales de un espacio de trabajo y coworking ubicado en Palamós, Girona",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/epicentre-coworking-palamos-desenvolupa-idees-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Coworking Epicentre Palamós, desenvolupa les teves idees"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/epicentre-coworking-palamos-recepcio-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Coworking Epicentre Palamós, recepció"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/epicentre-coworking-palamos-info-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Coworking Epicentre Palamós, info de contacto"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/epicentre-coworking-palamos-espai-treball-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Coworking Epicentre Palamós, espai de treball"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/epicentre-coworking-palamos-horari-funcionament-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Coworking Epicentre Palamós, horari de funcionament"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/epicentre-coworking-palamos-jornada-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Coworking Epicentre Palamós, jornada de trabajo"
+            }
+        ],
+        href: "#",
+        newTab: true
+    },
+    {
+        category: "Eventos",
+        title: "Formula-E Santiago ePrix 2020",
+        description: "FIA Runner para el Santiago ePrix 2020 de Formula-E, realizado en el Parque O'Higgins.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/formula-e-fia-runner-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Santiago ePrix 2020 Formula E, Leonardo Salinas, FIA Runner"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/formula-e-stewards-office-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Santiago ePrix 2020 Formula E, Steward's Office"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/formula-e-rear-car-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Santiago ePrix 2020 Formula E, rear of a Racing Car"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/formula-e-front-wing-tcheetah-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Santiago ePrix 2020 Formula E, front wing from Tcheetah Racing Team"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/formula-e-fia-runner-podium-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Santiago ePrix 2020 Formula E, Leonardo Salinas, FIA Runner, en el podio después de la celebración"
+            }
+        ],
+        href: "#",
+        newTab: false
+    },
+    {
+        categories: ["Estrategia y Marca", "Eventos"],
+        title: "Gamertón by FestiGame (Teletón 2018)",
+        description: "Co-Producción y Dirección de Contenidos para evento presencial y televisado a nivel nacional durante 'Teletón 2018'.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/gamerton-festigame-2018-logotipo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Logotipo de Gamertón by FestiGame, durante Teletón 2018"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/gamerton-festigame-escenario-publico-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Escenario de Gamertón by FestiGame, durante Teletón 2018"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/gamerton-festigame-ignacia-antonia-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Presencia de la influencer Ignacia Antoni en Gamertón by FestiGame, durante Teletón 2018"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/gamerton-festigame-vr-realidad-virtual-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Espacio de Realidad Virtual (VR) en Gamertón by FestiGame, durante Teletón 2018"
+            }
+        ],
+        href: "#",
         newTab: true
     },
     {
         categories: ["Estrategia y Marca", "Eventos"],
-        title: "FestiGame",
-        description: "Director de Contenidos para uno de los eventos masivos de videojuegos y cultura gaming más importante de Sudamérica.",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
-        alt: "Retrato de una persona en exterior",
-        href: "#contacto",
+        title: "Expo Diversidad 2018",
+        description: "Co-Productor & Gestión de Crisis de Comunicación para nuevo evento que celebra la diversidad junto a la comunidad LGBTIQ+ en Santiago de Chile.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/expo-diversidad-presentacion-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Presentación de Expo Diversidad 2018"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/expo-diversidad-los-40-media-partner-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Presentación de Los 40 como Media Partner de Expo Diversidad 2018"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/expo-diversidad-marcha-logotipo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Marcha y Presentación de Expo Diversidad 2018 a través de marketing callejero"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/expo-diversidad-alessia-injoque-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Charla de Alessia Injoque durante Expo Diversidad 2018"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/expo-diversidad-drag-queen-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Drag Queen presente en Expo Diversidad 2018"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/expo-diversidad-drag-queens-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Show de Drag Queens en Expo Diversidad 2018"
+            }
+        ],
+        href: "#",
         newTab: false
     },
     {
-        category: "Fotos",
-        title: "Luz de tarde",
-        description: "La última luz sobre el paisaje",
-        image: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=80",
-        alt: "Paisaje iluminado por la luz cálida del atardecer",
-        href: "https://example.com/fotos-luz-de-tarde",
-        newTab: true
-    },
-    {
-        category: "Fotos",
-        title: "Calles de Gràcia",
-        description: "Una mirada cotidiana a Gràcia",
-        image: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=80",
-        alt: "Calle de ciudad al anochecer",
-        href: "#contacto",
-        newTab: false
-    },
-    {
-        category: "Fotos",
-        title: "Texturas del barrio",
-        description: "Detalles que cuentan la vida del barrio",
-        image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80",
-        alt: "Detalle arquitectónico de un edificio",
-        href: "https://example.com/fotos-texturas",
-        newTab: true
-    },
-    {
-        category: "Fotos",
-        title: "Un domingo tranquilo",
-        description: "Una pausa entre montañas y lagos",
-        image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80",
-        alt: "Paisaje de montaña junto a un lago",
-        href: "#contacto",
-        newTab: false
-    },
-    {
-        category: "Vídeos",
-        title: "Jazztick @ Barcelona",
-        description: "Vídeo presentación",
-        image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80",
-        alt: "Cámara de vídeo preparada para grabar",
-        href: "https://example.com/video-historias",
-        newTab: true
-    },
-    {
-        category: "Vídeos",
-        title: "Sesión en el estudio",
-        description: "Detrás de cámaras en una producción",
-        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80",
-        alt: "Equipo de rodaje durante una producción audiovisual",
-        href: "#contacto",
-        newTab: false
-    },
-    {
-        category: "Vídeos",
-        title: "Crónicas del festival",
-        description: "La energía de un festival en vivo",
-        image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80",
-        alt: "Público disfrutando de un festival",
-        href: "https://example.com/video-festival",
+        category: "Eventos",
+        title: "ExpoNauta 2014 & 2015",
+        description: "Co-Producción de Contenidos y Apoyo Logístico para feria y encuentro tecnológico escolar, producido para el Ministerio de Educación de Chile.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/exponauta-logotipo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Logotipo de ExpoNauta"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/exponauta-taller-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Taller para escolares en ExpoNauta"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/exponauta-layout-2014-asistentes-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Layout de ExpoNauta 2014"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/exponauta-layout-2015-asistentes-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Layout de ExpoNauta 2015"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/exponauta-taller-robotica-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Taller de Robótica durante ExpoNauta"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/exponauta-taller-computacion-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Taller de Computación en ExpoNauta"
+            }
+        ],
+        href: "#",
         newTab: true
     },
     {
@@ -363,17 +612,18 @@ function shuffleItems(items) {
 function renderPhotos() {
     const randomizedPhotos = shuffleItems(photos);
 
-    const renderGroup = group => group.map(photo => `
+    const renderGroup = (group, prioritizeFirstImage = false) => group.map((photo, index) => `
         <button class="photo-card" type="button" data-photo-index="${photos.indexOf(photo)}" aria-label="Ver fotografía: ${photo.alt}">
             <span class="photo-frame photo-frame-${photo.frameSize}" style="--frame-color: ${photo.frame}">
                 <span class="photo-image" style="--photo-ratio: ${photo.ratio || "4 / 5"}">
-                    <img src="${photo.image}" alt="${photo.alt}" loading="lazy" width="800" height="1200">
+                    <img src="${photo.image}" alt="${photo.alt}" loading="${prioritizeFirstImage && index === 0 ? "eager" : "lazy"}" decoding="async" ${prioritizeFirstImage && index === 0 ? 'fetchpriority="high"' : ""} width="800" height="1200">
                 </span>
             </span>
         </button>
     `).join("");
 
-    document.querySelector("#photo-grid-first").innerHTML = renderGroup(randomizedPhotos.slice(0, 4));
+    // Prioriza una imagen inicial; el resto de la cuadrícula se carga al acercarse a la vista.
+    document.querySelector("#photo-grid-first").innerHTML = renderGroup(randomizedPhotos.slice(0, 4), true);
     document.querySelector("#photo-grid-second").innerHTML = renderGroup(randomizedPhotos.slice(4));
 }
 
@@ -396,7 +646,7 @@ function renderGallery() {
 // Los ítems con varias imágenes usan un carrusel; el resto conserva su imagen estática.
 function renderGalleryImage(item) {
     if (!item.images || item.images.length < 2) {
-        return `<img class="card-img-top gallery-card-image" src="${item.image}" alt="${item.alt}" loading="lazy" width="900" height="1125">`;
+        return `<img class="card-img-top gallery-card-image" src="${item.image}" alt="${item.alt}" loading="lazy" decoding="async" width="900" height="1125">`;
     }
 
     return `
@@ -404,7 +654,7 @@ function renderGalleryImage(item) {
             <div class="gallery-carousel-track" data-carousel-track style="--slide-offset: 0%">
                 ${item.images.map((image, index) => `
                     <div class="gallery-carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="${index + 1} de ${item.images.length}" aria-hidden="${index !== 0}">
-                        <img class="gallery-card-image" src="${image.src}" alt="${image.alt}" loading="lazy" width="900" height="1125" draggable="false">
+                        <img class="gallery-card-image" src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async" width="900" height="1125" draggable="false">
                     </div>
                 `).join("")}
             </div>
