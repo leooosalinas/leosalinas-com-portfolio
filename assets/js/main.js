@@ -78,7 +78,7 @@ const photos = [
 // Sustituye estos ejemplos por los datos definitivos; las descripciones admiten hasta 40 caracteres.
 const galleryItems = [
     {
-        category: "Estrategia y Marca",
+        categories: ["Estrategia y Marca", "Proyectos Propios"],
         title: "Juegaesports.com",
         description: "Co-Fundador & Editor General para plataforma de noticias y contenido de esports en Latinoamérica.",
         image: "https://leosalinas.com/img/portfolio/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -201,7 +201,7 @@ const galleryItems = [
         description: "Jefe de Comunicaciones para la liga de Artes Marciales Mixtas (MMA) con más reconocimiento en México y Latinoamérica.",
         images: [
             {
-                src: "https://leosalinas.com/img/portfolio/lux-fight-league-leonardo-salinas-lux-023-marco-beltran-fito-rubio.jpg?auto=format&fit=crop&w=900&q=80",
+                src: "https://leosalinas.com/img/portfolio/lux-fight-league-lux-023-poster-beltran-rubio-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
                 alt: "LUX Fight League, LUX 023, Marco Beltrán vs Fito Rubio"
             },
             {
@@ -455,6 +455,39 @@ const galleryItems = [
         newTab: true
     },
     {
+        categories: ["Estrategia y Marca", "Proyectos Propios"],
+        title: "Olimaclan",
+        description: "Representante y Desarrollo de Branding para reconocido jugador profesional chileno del videojuego 'FIFA'.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/olimaclan-fifa-ultimate-team-card-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Olimaclan durante el lanzamiento de FIFA 18"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/olimaclan-universidad-catolica-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Olimaclan durante la presentación de nuevo jugador de esports para Universidad Católica"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/olimaclan-programa-tv-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Olimaclan durante entrevista en TV"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/olimaclan-entrevista-fox-alemania-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Olimaclan en entrevista para Fox Sports, en Alemania"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/olimaclan-sala-prensa-bayer-leverkusen-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Olimaclan en Sala de Prensa del Bayer Leverkusen"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/olimaclan-grafica-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Olimaclan, jugador profesional de EA FIFA"
+            }
+        ],
+        href: "#",
+        newTab: true
+    },
+    {
         categories: ["Estrategia y Marca", "Eventos"],
         title: "Expo Diversidad 2018",
         description: "Co-Productor & Gestión de Crisis de Comunicación para nuevo evento que celebra la diversidad junto a la comunidad LGBTIQ+ en Santiago de Chile.",
@@ -489,6 +522,15 @@ const galleryItems = [
     },
     {
         category: "Eventos",
+        title: "fiiS 2016 (ciclo fiiS emergente)",
+        description: "Apoyo en Comunicación para ciclo 'fiiS emergente', durante el desarrollo de fiiS 2016, en Santiago de Chile.",
+        image: "https://leosalinas.com/img/portfolio/fiis-emergente-2016-charlas-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+        alt: "Logotipo fiiS emergente para fiiS 2016",
+        href: "#",
+        newTab: true
+    },
+    {
+        category: "Eventos",
         title: "ExpoNauta 2014 & 2015",
         description: "Co-Producción de Contenidos y Apoyo Logístico para feria y encuentro tecnológico escolar, producido para el Ministerio de Educación de Chile.",
         images: [
@@ -520,52 +562,106 @@ const galleryItems = [
         href: "#",
         newTab: true
     },
+    {
+        category: "Eventos",
+        title: "ExpoEnlances 2015",
+        description: "Apoyo en Producción para evento pedagógico y tecnológico organizado por Enlaces, el Centro de Innovación del Ministerio de Educación de Chile",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/expoenlaces-logo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Logotipo de ExpoEnlaces"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/expoenlaces-layout-2015-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Layout 2015 de ExpoEnlaces"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/expoenlaces-acreditaciones-publico-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sector de Acreditaciones de ExpoEnlaces 2015"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/expoenlaces-ministro-educacion-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Ministro de Educación durante ExpoEnlaces 2015"
+            }
+        ],
+        href: "#",
+        newTab: false
+    },
+    {
+        category: "Eventos",
+        title: "Pasarela Enjoy 2015-2017",
+        description: "Coordinador de Prensa y Apoyo en Producción para reconocido desfile de moda realizado en los jardines del Casino Enjoy Viña del Mar",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/grupo-pasarela-enjoy-vina-del-mar-logotipo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Logotipo Pasarela Enjoy by Grupo Pasarela"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/grupo-pasarela-enjoy-vina-del-mar-pamela-diaz-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Pamela Díaz durante Pasarela Enjoy by Grupo Pasarela"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/grupo-pasarela-enjoy-vina-del-mar-modelo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Modelo en Pasarela Enjoy by Grupo Pasarela"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/grupo-pasarela-enjoy-vina-del-mar-desfile-modelos-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Desfile de modelos en Pasarela Enjoy by Grupo Pasarela"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/grupo-pasarela-enjoy-vina-del-mar-modelo-02-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Modelo en Pasarela Enjoy by Grupo Pasarela"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/grupo-pasarela-enjoy-vina-del-mar-produccion-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Créditos de Producción Pasarela Enjoy by Grupo Pasarela"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/grupo-pasarela-enjoy-vina-del-mar-prensa-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Créditos Pasarela Enjoy by Grupo Pasarela"
+            }
+        ],
+        href: "#",
+        newTab: false
+    },
+    {
+        categories: ["Estrategia y Marca", "Proyectos Propios"],
+        title: "Glitch.cl",
+        description: "Co-Fundador y Director para portal de noticias y contenido de videojuegos en Chile.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/glitch-logo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Logo Glitch.cl"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/glitch-website-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sitio Web Glitch.cl"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/glitch-evento-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Evento Glitch.cl durante FestiGame 2012"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/glitch-microfono-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Micrófono Glitch.cl"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/glitch-plataformas-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Podcast Glitch.cl Multiplataformas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/glitch-entrevista-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Entrevista Glitch.cl durante WCG Chile 2011"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/glitch-entrevista-02-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Entrevista Glitch.cl durante evento de Electronic Arts en Santiago de Chile"
+            }
+        ],
+        href: "#",
+        newTab: false
+    },
     /*
-    {
-        category: "Vídeos",
-        title: "Conversaciones reales",
-        description: "Voces y relatos en primera persona",
-        image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=900&q=80",
-        alt: "Micrófono en un espacio de grabación",
-        href: "#contacto",
-        newTab: false
-    },
-    {
-        category: "Vídeos",
-        title: "Un minuto de Barcelona",
-        description: "Barcelona en sesenta segundos",
-        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80",
-        alt: "Cámara capturando una escena urbana",
-        href: "https://example.com/video-barcelona",
-        newTab: true
-    },
-    {
-        category: "Proyectos Propios",
-        title: "Mapa de rincones",
-        description: "Una guía personal de rincones favoritos",
-        image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=80",
-        alt: "Mapa abierto para planificar una ruta",
-        href: "#contacto",
-        newTab: false
-    },
-    {
-        category: "Proyectos Propios",
-        title: "Archivo de ideas",
-        description: "Un espacio para guardar nuevas ideas",
-        image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80",
-        alt: "Cuaderno abierto con notas e ideas",
-        href: "https://example.com/archivo-de-ideas",
-        newTab: true
-    },
-    {
-        category: "Proyectos Propios",
-        title: "Ventanas de Barcelona",
-        description: "Postales de la ciudad entre edificios",
-        image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=900&q=80",
-        alt: "Vista de una ciudad entre edificios",
-        href: "#contacto",
-        newTab: false
-    },
     {
         category: "Proyectos Propios",
         title: "Cuaderno de barrio",
