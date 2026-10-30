@@ -185,11 +185,11 @@ const galleryItems = [
             },
             {
                 src: "https://leosalinas.com/img/portfolio/festigame-entrevista-cnn-chile-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "FestiGame, entrevista Leonardo Salinas en CNN Chile"
+                alt: "FestiGame, entrevista Leo(nardo) Salinas en CNN Chile"
             },
             {
                 src: "https://leosalinas.com/img/portfolio/festigame-ed-boon-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "Ed Boon (co-creador de Mortal Kombat) junto a Leonardo Salinas, Director de Contenido de FestiGame"
+                alt: "Ed Boon (co-creador de Mortal Kombat) junto a Leo(nardo) Salinas, Director de Contenido de FestiGame"
             }
         ],
         href: "#",
@@ -407,7 +407,7 @@ const galleryItems = [
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/formula-e-fia-runner-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
-                alt: "Santiago ePrix 2020 Formula E, Leonardo Salinas, FIA Runner"
+                alt: "Santiago ePrix 2020 Formula E, Leo(nardo) Salinas, FIA Runner"
             },
             {
                 src: "https://leosalinas.com/img/portfolio/formula-e-stewards-office-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -423,7 +423,7 @@ const galleryItems = [
             },
             {
                 src: "https://leosalinas.com/img/portfolio/formula-e-fia-runner-podium-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
-                alt: "Santiago ePrix 2020 Formula E, Leonardo Salinas, FIA Runner, en el podio después de la celebración"
+                alt: "Santiago ePrix 2020 Formula E, Leo(nardo) Salinas, FIA Runner, en el podio después de la celebración"
             }
         ],
         href: "#",
@@ -661,26 +661,93 @@ const galleryItems = [
         href: "#",
         newTab: false
     },
-    /*
     {
-        category: "Proyectos Propios",
-        title: "Cuaderno de barrio",
-        description: "Notas sobre la vida cotidiana del barrio",
-        image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80",
-        alt: "Libros y cuaderno sobre una mesa",
-        href: "https://example.com/cuaderno-de-barrio",
+        category: "Fotos",
+        title: "Pepa Poduje",
+        description: "Sesión de fotos para Pepa Poduje, técnico en nutrición, yogaterapeuta y especializada en nutrigenética y nutrigenómica.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/pepa-poduje-01-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Pepa Poduje x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/pepa-poduje-02-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Pepa Poduje x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/pepa-poduje-03-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Pepa Poduje x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/pepa-poduje-04-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Pepa Poduje x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/pepa-poduje-05-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Pepa Poduje x Leo(nardo) Salinas"
+            }
+        ],
+        href: "#",
         newTab: true
     },
     {
-        category: "Proyectos Propios",
-        title: "Pequeñas exploraciones",
-        description: "Rutas para salir a explorar sin prisa",
-        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
-        alt: "Paisaje natural durante una exploración",
-        href: "#contacto",
+        category: "Fotos",
+        title: "Cal Fruitós (Travessera de Dalt)",
+        description: "Sesión de fotos para reconocida cadena de supermercados de proximidad y fruterías, originaria de Cataluña.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/cal-fruitos-01-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Cal Fruitós Travessera de Dalt x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/cal-fruitos-02-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Cal Fruitós Travessera de Dalt x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/cal-fruitos-03-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Cal Fruitós Travessera de Dalt x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/cal-fruitos-04-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Cal Fruitós Travessera de Dalt x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/cal-fruitos-05-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Cal Fruitós Travessera de Dalt x Leo(nardo) Salinas"
+            }
+        ],
+        href: "#",
+        newTab: false
+    },
+    {
+        category: "Fotos",
+        title: "Open Greencourt 2026 Sabadell",
+        description: "Sesión de fotos para torneo ITF Future M25, un campeonato de tenis profesional realizado en el Club de Tennis Sabadell.",
+        images: [
+            {
+                src: "https://leosalinas.com/img/portfolio/open-greencourt-2026-sabadell-itf-future-01-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Open Greencourt 2026 Sabadell x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/open-greencourt-2026-sabadell-itf-future-02-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Open Greencourt 2026 Sabadell x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/open-greencourt-2026-sabadell-itf-future-03-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Open Greencourt 2026 Sabadell x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/open-greencourt-2026-sabadell-itf-future-04-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Open Greencourt 2026 Sabadell x Leo(nardo) Salinas"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/open-greencourt-2026-sabadell-itf-future-05-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Sesión de Fotos para Open Greencourt 2026 Sabadell x Leo(nardo) Salinas"
+            }
+        ],
+        href: "#",
         newTab: false
     }
-        */
 ];
 
 // Inserta el header y el footer compartidos en cada página.
