@@ -253,6 +253,87 @@ a {
     margin-bottom: 1.5rem;
 }
 
+/* El grupo duplicado permite desplazar las cinco imágenes en un bucle continuo. */
+.image-marquees-section {
+    overflow: hidden;
+    background: var(--page-bg);
+}
+
+.image-marquee-block .section-heading {
+    margin-bottom: 2rem;
+}
+
+.image-marquee-caption {
+    max-width: 72rem;
+    margin: 1.5rem auto 0;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    text-align: left;
+}
+
+.image-marquee-caption h2 {
+    margin: 0;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -.025em;
+}
+
+.image-marquee-caption p {
+    max-width: 48rem;
+    margin: .5rem 0 0;
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+.image-marquee-section--offset .image-marquee-track {
+    margin-left: clamp(3rem, 9vw, 6rem);
+}
+
+.image-marquee {
+    --marquee-gap: clamp(.75rem, 2vw, 1.5rem);
+    overflow: hidden;
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.image-marquee.is-dragging {
+    cursor: grabbing;
+}
+
+.image-marquee-track,
+.image-marquee-group {
+    display: flex;
+    width: max-content;
+}
+
+.image-marquee-track {
+    animation: image-marquee-scroll 36s linear infinite;
+    will-change: transform;
+}
+
+.image-marquee-group {
+    flex: none;
+    gap: var(--marquee-gap);
+    padding-right: var(--marquee-gap);
+}
+
+.image-marquee img {
+    display: block;
+    flex: 0 0 clamp(10rem, 22vw, 18rem);
+    width: clamp(10rem, 22vw, 18rem);
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+@keyframes image-marquee-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 .gallery-card {
     overflow: hidden;
     border: 0;
@@ -458,6 +539,15 @@ a {
 @media (prefers-reduced-motion: reduce) {
     .gallery-carousel-track {
         transition: none;
+    }
+
+    .image-marquee {
+        overflow-x: auto;
+    }
+
+    .image-marquee-track {
+        animation: none;
+        will-change: auto;
     }
 }
 

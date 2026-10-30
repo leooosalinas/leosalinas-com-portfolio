@@ -31,7 +31,7 @@
             </div>
             <div class="photo-grid" id="photo-grid-second" aria-label="Siguientes fotografías"></div>
         </section>
-
+        
         <section class="projects-section py-5" id="portfolio">
             <div class="container-xl py-4">
                 <div class="section-heading text-center mx-auto">
@@ -39,7 +39,6 @@
                     <h2>Las cosas que he hecho para pagar el alquiler</h2>
                     <p>...y otras cosas que he hecho sólo por amor. Todo comenzó en 1996. A los 12 años me apasioné por internet, computadoras y hacer cosas. El resto no sabría cómo describirlo.</p>
                 </div>
-                <!-- Los filtros se basan en categorías y usan botones accesibles de Bootstrap. -->
                 <div class="gallery-filters d-flex flex-wrap justify-content-center gap-2 mb-4" role="group" aria-label="Filtrar proyectos por categoría">
                     <button class="btn btn-outline-dark active" type="button" data-gallery-filter="all" aria-pressed="true">Todos</button>
                     <button class="btn btn-outline-dark" type="button" data-gallery-filter="Estrategia y Marca" aria-pressed="false">Estrategia y Marca</button>
@@ -48,7 +47,6 @@
                     <button class="btn btn-outline-dark" type="button" data-gallery-filter="Vídeos" aria-pressed="false">Vídeos</button>
                     <button class="btn btn-outline-dark" type="button" data-gallery-filter="Proyectos Propios" aria-pressed="false">Proyectos Propios</button>
                 </div>
-                <!-- Bootstrap adapta las columnas de una tarjeta en móvil, tablet y escritorio. -->
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-4" id="gallery-grid" aria-live="polite"></div>
             </div>
         </section>
@@ -64,6 +62,17 @@
             </div>
         </section>
         -->
+
+        <!-- Cada proyecto de galleryItems genera un slideshow con sus imágenes, textos alternativos, título y descripción. -->
+        <section class="image-marquees-section py-5" aria-label="Slideshows de proyectos">
+            <div class="section-heading text-center mx-auto">
+                <span class="eyebrow">Portfolio</span>
+                <h2>Las cosas que he hecho para pagar el alquiler</h2>
+                <p>...y otras cosas que he hecho sólo por amor. Todo comenzó en 1996. A los 12 años me apasioné por internet, computadoras y hacer cosas. El resto no sabría cómo describirlo.</p>
+            </div>
+            <!-- Para sumar un slideshow, añade el proyecto a galleryItems en main.js; la asimetría se alterna automáticamente. -->
+            <div id="project-image-marquees"></div>
+        </section>
     </main>
 
     <div data-include="components/footer.html"></div>

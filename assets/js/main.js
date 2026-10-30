@@ -688,6 +688,7 @@ const galleryItems = [
             }
         ],
         href: "#",
+        buttonText: "Ver fotos",
         newTab: true
     },
     {
@@ -717,6 +718,7 @@ const galleryItems = [
             }
         ],
         href: "#",
+        buttonText: "Ver fotos",
         newTab: false
     },
     {
@@ -746,6 +748,7 @@ const galleryItems = [
             }
         ],
         href: "#",
+        buttonText: "Ver fotos",
         newTab: false
     }
 ];
@@ -806,6 +809,43 @@ function renderGallery() {
             </article>
         </div>
     `).join("");
+}
+
+// Crea un slideshow por proyecto, usando todas sus imágenes o su imagen individual como respaldo.
+function renderProjectImageMarquees() {
+    const container = document.querySelector("#project-image-marquees");
+    container.innerHTML = galleryItems.map((project, index) => {
+        const images = project.images?.length
+            ? project.images
+            : [{ src: project.image, alt: project.alt }];
+        const imageMarkup = images.map(image => `
+            <img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async" width="600" height="750">
+        `).join("");
+        const duplicateImageMarkup = images.map(image => `
+            <img src="${image.src}" alt="" loading="lazy" decoding="async" width="600" height="750">
+        `).join("");
+        const titleId = `project-marquee-title-${index + 1}`;
+        const offsetClass = index % 2 === 1 ? " image-marquee-section--offset" : "";
+
+        return `
+            <article class="image-marquee-block${offsetClass} py-5" aria-labelledby="${titleId}">
+                <div class="image-marquee" role="region" aria-label="Slideshow de imágenes de ${project.title}">
+                    <div class="image-marquee-track">
+                        <div class="image-marquee-group">
+                            ${imageMarkup}
+                        </div>
+                        <div class="image-marquee-group" aria-hidden="true">
+                            ${duplicateImageMarkup}
+                        </div>
+                    </div>
+                </div>
+                <div class="image-marquee-caption" aria-labelledby="${titleId}">
+                    <h2 id="${titleId}">${project.title}</h2>
+                    <p>${project.description}</p>
+                </div>
+            </article>
+        `;
+    }).join("");
 }
 
 // Los ítems con varias imágenes usan un carrusel; el resto conserva su imagen estática.
@@ -942,6 +982,90 @@ function bindGalleryFilters() {
     });
 }
 
+// Permite arrastrar una cinta y reanuda su autoplay desde la posición elegida.
+function bindImageMarquee(marquee) {
+    const track = marquee.querySelector(".image-marquee-track");
+    const firstGroup = track.querySelector(".image-marquee-group");
+    const duplicateGroup = track.querySelector(".image-marquee-group[aria-hidden='true']");
+    const originalImages = [...firstGroup.querySelectorAll("img")];
+    // Repeat short image lists until a loop segment is wide enough to cover the viewport.
+    while (firstGroup.scrollWidth < marquee.clientWidth && originalImages.length > 0) {
+        originalImages.forEach(image => firstGroup.append(image.cloneNode(true)));
+    }
+    duplicateGroup.replaceChildren(...[...firstGroup.querySelectorAll("img")].map(image => {
+        const clone = image.cloneNode(true);
+        clone.alt = "";
+        return clone;
+    }));
+
+    let activePointerId = null;
+    let startX = 0;
+    let startY = 0;
+    let startTime = 0;
+    let startScrollLeft = 0;
+    let isHorizontalDrag = false;
+    let activeAnimation = null;
+
+    marquee.addEventListener("pointerdown", event => {
+        if (!event.isPrimary || (event.pointerType === "mouse" && event.button !== 0)) return;
+
+        activePointerId = event.pointerId;
+        startX = event.clientX;
+        startY = event.clientY;
+        startScrollLeft = marquee.scrollLeft;
+        isHorizontalDrag = false;
+        activeAnimation = track.getAnimations().find(animation => animation.animationName === "image-marquee-scroll");
+        if (activeAnimation) {
+            activeAnimation.pause();
+            startTime = Number(activeAnimation.currentTime) || 0;
+        }
+        marquee.setPointerCapture(event.pointerId);
+    });
+
+    marquee.addEventListener("pointermove", event => {
+        if (event.pointerId !== activePointerId) return;
+
+        const deltaX = event.clientX - startX;
+        const deltaY = event.clientY - startY;
+        if (!isHorizontalDrag && Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 5) {
+            isHorizontalDrag = true;
+            marquee.classList.add("is-dragging");
+        }
+
+        if (!isHorizontalDrag) return;
+        event.preventDefault();
+
+        if (activeAnimation) {
+            const duration = Number(activeAnimation.effect.getTiming().duration);
+            const loopWidth = firstGroup.getBoundingClientRect().width;
+            if (duration && loopWidth) {
+                const newTime = startTime - (deltaX / loopWidth) * duration;
+                activeAnimation.currentTime = ((newTime % duration) + duration) % duration;
+            }
+        } else {
+            marquee.scrollLeft = startScrollLeft - deltaX;
+        }
+    });
+
+    const finishDrag = event => {
+        if (event.pointerId !== activePointerId) return;
+        activePointerId = null;
+        if (marquee.hasPointerCapture(event.pointerId)) {
+            marquee.releasePointerCapture(event.pointerId);
+        }
+        marquee.classList.remove("is-dragging");
+        if (activeAnimation) {
+            activeAnimation.play();
+            activeAnimation = null;
+        }
+        isHorizontalDrag = false;
+    };
+
+    marquee.addEventListener("pointerup", finishDrag);
+    marquee.addEventListener("pointercancel", finishDrag);
+    marquee.addEventListener("lostpointercapture", finishDrag);
+}
+
 // Conecta las fotografías con el modal de Bootstrap.
 function bindPhotoModal() {
     const modalElement = document.querySelector("#photo-modal");
@@ -970,8 +1094,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     renderPhotos();
-    renderGallery();
-    bindGalleryCarousels();
-    bindGalleryFilters();
+    if (document.querySelector("#gallery-grid")) {
+        renderGallery();
+        bindGalleryCarousels();
+        bindGalleryFilters();
+    }
+    renderProjectImageMarquees();
+    document.querySelectorAll(".image-marquee").forEach(bindImageMarquee);
     bindPhotoModal();
 });
