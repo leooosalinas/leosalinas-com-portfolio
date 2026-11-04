@@ -81,30 +81,42 @@ const galleryItems = [
         categories: ["Estrategia y Marca", "Proyectos Propios"],
         title: "Juegaesports.com",
         description: "Co-Fundador & Editor General para plataforma de noticias y contenido de esports en Latinoamérica.",
-        image: "https://leosalinas.com/img/portfolio/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-        alt: "Juegaesports.com, Noticias y Contenido de Esports en Latinoamérica",
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
                 alt: "Mmonch, jugadora profesional de VALORANT, Juegaesports.com"
             },
             {
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/juegaesports-mmonch-valorant-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/juegaesports-mmonch-valorant-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Mmonch, primera mexicana en clasificar al mundial de VALORANT, Juegaesports.com"
+            },
+            {
                 src: "https://leosalinas.com/img/portfolio/counter-strike-juegaesports-almendruza-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
                 alt: "El fracaso silencioso de Counter-Strike 2, escrito por Almendruza, Juegaesports.com"
             },
             {
-                src: "https://leosalinas.com/img/portfolio/ea-fc-26-global-qualifier-juegaesports-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "Los mejores jugadores de Latinoamérica rumbo al Global Qualifier EA FC 26"
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/juegaesports-agardash-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/juegaesports-agardash-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Columna Agardash en Juegaesports.com"
             },
             {
-                src: "https://leosalinas.com/img/portfolio/adverso-valorant-juegaesports-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "Adverso, jugador profesional de VALORANT, Juegaesports.com"
+                src: "https://leosalinas.com/img/portfolio/juegaesports-score-valorant-leviatan-kru-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Match Leviatán GC vs KRÜ Blaze, VALORANT, Juegaesports.com"
             },
             {
                 type: "video",
-                src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-                poster: "https://leosalinas.com/img/portfolio/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "Vídeo de prueba MP4 para Juegaesports.com"
+                src: "https://leosalinas.com/img/portfolio/juegaesports-team-liquid-valorant-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/juegaesports-team-liquid-valorant-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Artículo Team Liquid GC campeonas VALORANT, Juegaesports.com"
+            },
+            {
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/juegaesports-outro-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/juegaesports-outro-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Outro Juegaesports.com"
             }
         ],
         href: "#",
@@ -116,20 +128,44 @@ const galleryItems = [
         description: "Director de Proyecto para relanzamiento de club de esports con presencia en Chile.",
         images: [
             {
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/kaos-latin-gamers-klg-rinocerontes-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/kaos-latin-gamers-klg-rinocerontes-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Teaser Kaos Latin Gamers con rinocerontes"
+            },
+            {
                 src: "https://leosalinas.com/img/portfolio/agardash-kaos-latin-gamers-klg-fifa-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
                 alt: "Matías 'Agardash' Flores, Pro Player EA FC, Kaos Latin Gamers"
+            },
+            {
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/kaos-latin-gamers-klg-equipo-valorant-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/kaos-latin-gamers-klg-equipo-valorant-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Presentación Equipo VALORANT por un cupo en VCL"
+            },
+            {
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/kaos-latin-gamers-klg-tierwulf-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/kaos-latin-gamers-klg-tierwulf-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Tierwulf, Leyendas del Rino, Kaos Latin Gamers"
+            },
+            {
+                src: "https://leosalinas.com/img/portfolio/valorant-kaos-latin-gamers-klg-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Equipo VALORANT, Kaos Latin Gamers"
             },
             {
                 src: "https://leosalinas.com/img/portfolio/emilio-cordero-kaos-latin-gamers-klg-pokemon-tcg-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
                 alt: "Emilio Cordero, Pro Player Pokémon TCG, Kaos Latin Gamers"
             },
             {
-                src: "https://leosalinas.com/img/portfolio/juan-andree-kaos-latin-gamers-klg-pokemon-tcg-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "Juan Andree, Pro Player Pokémon TCG, Kaos Latin Gamers"
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/kaos-latin-gamers-klg-juan-andree-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/kaos-latin-gamers-klg-juan-andree-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Juan Andree, jugador profesional de Pokémon TCG para Kaos Latin Gamers"
             },
             {
-                src: "https://leosalinas.com/img/portfolio/valorant-kaos-latin-gamers-klg-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "Equipo VALORANT, Kaos Latin Gamers"
+                src: "https://leosalinas.com/img/portfolio/juan-andree-kaos-latin-gamers-klg-pokemon-tcg-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Juan Andree, Pro Player Pokémon TCG, Kaos Latin Gamers"
             }
         ],
         href: "#",
@@ -145,12 +181,14 @@ const galleryItems = [
                 alt: "Karely Ruiz vs Marcela Mistral, Ring Royale"
             },
             {
-                src: "https://leosalinas.com/img/portfolio/ring-royale-poncho-de-nigris-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "Poncho de Nigris, Ring Royale"
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/ring-royale-teaser-corona-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/ring-royale-teaser-corona-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Teaser Ring Royale"
             },
             {
-                src: "https://leosalinas.com/img/portfolio/ring-royale-arena-monterrey-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "Ring Royale, 15 de marzo 2026, Arena Monterrey"
+                src: "https://leosalinas.com/img/portfolio/ring-royale-poncho-de-nigris-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Poncho de Nigris, Ring Royale"
             }
         ],
         href: "#",
@@ -166,8 +204,16 @@ const galleryItems = [
                 alt: "FestiGame Coca-Cola 2018"
             },
             {
-                src: "https://leosalinas.com/img/portfolio/festigame-booth-playstation-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
-                alt: "FestiGame, booth PlayStation"
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/festigame-2018-sp-digital-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/festigame-2018-sp-digital-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Aftermovie SP Digital en FestiGame Coca-Cola 2018"
+            },
+            {
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/festigame-2016-playstation-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/festigame-2016-playstation-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "PlayStation en FestiGame Coca-Cola 2018"
             },
             {
                 src: "https://leosalinas.com/img/portfolio/festigame-publico-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -178,12 +224,24 @@ const galleryItems = [
                 alt: "FestiGame, entrada público"
             },
             {
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/festigame-2016-teaser-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/festigame-2016-teaser-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Teaser FestiGame 2016"
+            },
+            {
                 src: "https://leosalinas.com/img/portfolio/festigame-fifa-stage-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
                 alt: "FestiGame, Final FIFA, relatado por Fernando Palomo y Mario Alberto Kempes"
             },
             {
                 src: "https://leosalinas.com/img/portfolio/festigame-just-dance-pedro-morales-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
                 alt: "FestiGame, competencia Just Dance, Pedro Morales"
+            },
+            {
+                type: "video",
+                src: "https://leosalinas.com/img/portfolio/festigame-2014-spot-tv-leonardo-salinas.mp4",
+                poster: "https://leosalinas.com/img/portfolio/festigame-2014-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
+                alt: "Spot TV FestiGame 2014"
             },
             {
                 src: "https://leosalinas.com/img/portfolio/festigame-fanta-animadores-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
