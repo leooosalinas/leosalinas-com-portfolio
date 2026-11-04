@@ -131,6 +131,72 @@ a {
     font-weight: 400;
 }
 
+.intro-section {
+    display: grid;
+    min-height: clamp(26rem, 62vh, 42rem);
+    padding: 5rem 1.5rem;
+    place-items: center;
+    background: #fffaf7;
+    text-align: center;
+}
+
+.intro-content {
+    width: min(100%, 64rem);
+}
+
+.intro-content h1 {
+    margin: 0 auto;
+    font-size: clamp(2.2rem, 5.2vw, 4.5rem);
+    font-weight: 500;
+    letter-spacing: -.055em;
+    line-height: 1.2;
+}
+
+.intro-content h1 span {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: -.04em;
+}
+
+.intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.intro-button {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    padding: .65rem 1.4rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    font-size: .875rem;
+    font-weight: 600;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.intro-button--primary {
+    border-color: #fa503d;
+    background: #fa503d;
+    color: #fff;
+}
+
+.intro-button--primary:hover {
+    border-color: #dc3e2d;
+    background: #dc3e2d;
+    color: #fff;
+}
+
+.intro-button--secondary:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
 /* Galería: cuadrícula regular para evitar que las columnas estrechen las fotos. */
 .gallery-section {
     border-bottom: 1px solid #d7d5cf;
@@ -253,14 +319,10 @@ a {
     margin-bottom: 1.5rem;
 }
 
-/* El grupo duplicado permite desplazar las cinco imágenes en un bucle continuo. */
+/* El grupo duplicado permite desplazar los elementos en un bucle continuo. */
 .image-marquees-section {
     overflow: hidden;
     background: var(--page-bg);
-}
-
-.image-marquee-block .section-heading {
-    margin-bottom: 2rem;
 }
 
 .image-marquee-caption {
@@ -308,7 +370,7 @@ a {
 }
 
 .image-marquee-track {
-    animation: image-marquee-scroll 36s linear infinite;
+    animation: image-marquee-scroll 72s linear infinite;
     will-change: transform;
 }
 
@@ -318,13 +380,18 @@ a {
     padding-right: var(--marquee-gap);
 }
 
-.image-marquee img {
+.image-marquee img,
+.image-marquee-video {
     display: block;
     flex: 0 0 clamp(10rem, 22vw, 18rem);
     width: clamp(10rem, 22vw, 18rem);
-    height: auto;
+    height: clamp(12.5rem, 27.5vw, 22.5rem);
     aspect-ratio: 4 / 5;
     object-fit: cover;
+}
+
+.image-marquee img {
+    height: auto;
     -webkit-user-drag: none;
 }
 
@@ -446,21 +513,6 @@ a {
 .gallery-card .btn {
     padding: .3rem .65rem;
     font-size: .75rem;
-}
-
-/* Texto de presentación personal. */
-.about-section {
-    max-width: 58rem;
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
-}
-
-.about-copy {
-    max-width: 42rem;
-    margin: 1.5rem auto 0;
-    color: #55534f;
-    font-size: 1rem;
-    line-height: 1.8;
 }
 
 .site-footer {

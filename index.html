@@ -22,6 +22,16 @@
     <div data-include="components/header.html"></div>
 
     <main>
+        <section class="intro-section" aria-labelledby="intro-title">
+            <div class="intro-content">
+                <h1 id="intro-title">Hola, soy <span>Leo(nardo) Salinas</span>. Soy un ser humano curioso. Comunicador de profesión. Me gusta hacer cosas. También hago fotos.</h1>
+                <div class="intro-actions">
+                    <a class="intro-button intro-button--primary" href="#contacto">Contáctame</a>
+                    <a class="intro-button intro-button--secondary" href="#portfolio">Ver Portfolio</a>
+                </div>
+            </div>
+        </section>
+
         <section class="gallery-section container-xl py-5" id="galeria">
             <div class="photo-grid" id="photo-grid-first" aria-label="Primeras fotografías"></div>
             <div class="section-heading text-center mx-auto">
@@ -31,7 +41,7 @@
             </div>
             <div class="photo-grid" id="photo-grid-second" aria-label="Siguientes fotografías"></div>
         </section>
-        
+        <!--
         <section class="projects-section py-5" id="portfolio">
             <div class="container-xl py-4">
                 <div class="section-heading text-center mx-auto">
@@ -50,27 +60,14 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-4" id="gallery-grid" aria-live="polite"></div>
             </div>
         </section>
-        <!-- 
-        <section class="about-section container py-5" id="sobre-mi">
-            <div class="section-heading text-center mx-auto">
-                <span class="eyebrow">Sobre mí</span>
-                <h2>Hola, soy Leo(nardo) Salinas</h2>
-                <div class="about-copy text-start text-sm-center">
-                    <p>Emigré a Barcelona desde Chile. Me especializo en dar vida a <strong>proyectos de comunicación, branding y creación de contenidos</strong>, gestionando desde la estrategia inicial hasta la producción final.</p>
-                    <p>He liderado actividades para marcas, participado en festivales masivos y desarrollado plataformas web y multimedia. Ocasionalmente fotografío las calles de Gràcia y capturo retratos de personas reales.</p>
-                </div>
-            </div>
-        </section>
         -->
 
-        <!-- Cada proyecto de galleryItems genera un slideshow con sus imágenes, textos alternativos, título y descripción. -->
-        <section class="image-marquees-section py-5" aria-label="Slideshows de proyectos">
+        <section class="image-marquees-section py-5" id="portfolio" aria-label="Slideshows de proyectos">
             <div class="section-heading text-center mx-auto">
                 <span class="eyebrow">Portfolio</span>
                 <h2>Las cosas que he hecho para pagar el alquiler</h2>
                 <p>...y otras cosas que he hecho sólo por amor. Todo comenzó en 1996. A los 12 años me apasioné por internet, computadoras y hacer cosas. El resto no sabría cómo describirlo.</p>
             </div>
-            <!-- Para sumar un slideshow, añade el proyecto a galleryItems en main.js; la asimetría se alterna automáticamente. -->
             <div id="project-image-marquees"></div>
         </section>
     </main>

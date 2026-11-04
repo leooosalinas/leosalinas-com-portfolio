@@ -99,6 +99,12 @@ const galleryItems = [
             {
                 src: "https://leosalinas.com/img/portfolio/adverso-valorant-juegaesports-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
                 alt: "Adverso, jugador profesional de VALORANT, Juegaesports.com"
+            },
+            {
+                type: "video",
+                src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+                poster: "https://leosalinas.com/img/portfolio/juegaesports-mmonch-valorant-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
+                alt: "Vídeo de prueba MP4 para Juegaesports.com"
             }
         ],
         href: "#",
@@ -818,10 +824,14 @@ function renderProjectImageMarquees() {
         const images = project.images?.length
             ? project.images
             : [{ src: project.image, alt: project.alt }];
-        const imageMarkup = images.map(image => `
+        const imageMarkup = images.map(image => image.type === "video" ? `
+            <video class="image-marquee-video" src="${image.src}" poster="${image.poster}" aria-label="${image.alt}" muted autoplay loop playsinline preload="metadata" width="600" height="750"></video>
+        ` : `
             <img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async" width="600" height="750">
         `).join("");
-        const duplicateImageMarkup = images.map(image => `
+        const duplicateImageMarkup = images.map(image => image.type === "video" ? `
+            <video class="image-marquee-video" src="${image.src}" poster="${image.poster}" muted autoplay loop playsinline preload="metadata" width="600" height="750"></video>
+        ` : `
             <img src="${image.src}" alt="" loading="lazy" decoding="async" width="600" height="750">
         `).join("");
         const titleId = `project-marquee-title-${index + 1}`;
@@ -842,6 +852,7 @@ function renderProjectImageMarquees() {
                 <div class="image-marquee-caption" aria-labelledby="${titleId}">
                     <h2 id="${titleId}">${project.title}</h2>
                     <p>${project.description}</p>
+                    <a class="btn btn-outline-dark mt-3" href="${project.href}" ${project.newTab ? 'target="_blank" rel="noopener noreferrer"' : ""}>${project.buttonText || "Ver más"}</a>
                 </div>
             </article>
         `;
@@ -859,7 +870,7 @@ function renderGalleryImage(item) {
             <div class="gallery-carousel-track" data-carousel-track style="--slide-offset: 0%">
                 ${item.images.map((image, index) => `
                     <div class="gallery-carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="${index + 1} de ${item.images.length}" aria-hidden="${index !== 0}">
-                        <img class="gallery-card-image" src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async" width="900" height="1125" draggable="false">
+                        <img class="gallery-card-image" src="${image.type === "video" ? image.poster : image.src}" alt="${image.alt}" loading="lazy" decoding="async" width="900" height="1125" draggable="false">
                     </div>
                 `).join("")}
             </div>
@@ -987,14 +998,18 @@ function bindImageMarquee(marquee) {
     const track = marquee.querySelector(".image-marquee-track");
     const firstGroup = track.querySelector(".image-marquee-group");
     const duplicateGroup = track.querySelector(".image-marquee-group[aria-hidden='true']");
-    const originalImages = [...firstGroup.querySelectorAll("img")];
+    const originalMedia = [...firstGroup.querySelectorAll("img, video")];
     // Repeat short image lists until a loop segment is wide enough to cover the viewport.
-    while (firstGroup.scrollWidth < marquee.clientWidth && originalImages.length > 0) {
-        originalImages.forEach(image => firstGroup.append(image.cloneNode(true)));
+    while (firstGroup.scrollWidth < marquee.clientWidth && originalMedia.length > 0) {
+        originalMedia.forEach(media => firstGroup.append(media.cloneNode(true)));
     }
-    duplicateGroup.replaceChildren(...[...firstGroup.querySelectorAll("img")].map(image => {
-        const clone = image.cloneNode(true);
-        clone.alt = "";
+    duplicateGroup.replaceChildren(...[...firstGroup.querySelectorAll("img, video")].map(media => {
+        const clone = media.cloneNode(true);
+        if (clone instanceof HTMLImageElement) {
+            clone.alt = "";
+        } else {
+            clone.removeAttribute("aria-label");
+        }
         return clone;
     }));
 
