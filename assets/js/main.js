@@ -128,7 +128,6 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Kaos Latin Gamers",
         description: "<b>Director de Proyecto</b> para relanzamiento de club de esports con presencia en Chile.",
-        tags: ["Redacción", "Edición de Contenidos", "Liderazgo"],
         images: [
             {
                 type: "video",
