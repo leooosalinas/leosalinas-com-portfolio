@@ -128,6 +128,7 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Kaos Latin Gamers",
         description: "<b>Director de Proyecto</b> para relanzamiento de club de esports con presencia en Chile.",
+        tags: ["Esports", "Estrategia de Marca", "Identidad Visual", "Gestión de Equipos", "Contenido Digital"],
         images: [
             {
                 type: "video",
@@ -178,6 +179,7 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Ring Royale",
         description: "<b>Lead de Estrategia de Marca y Comunicación</b> en la fase de pre-lanzamiento de nuevo evento de boxeo entre celebridades en México.",
+        tags: ["Estrategia de Marca", "Comunicación", "Eventos en Vivo", "Deportes"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/ring-royale-karely-ruiz-marcela-mistral-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -201,6 +203,7 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "LUX Fight League",
         description: "<b>Jefe de Comunicaciones</b> para la liga de Artes Marciales Mixtas (MMA) con más reconocimiento en México y Latinoamérica.",
+        tags: ["Dirección de Comunicación", "Deportes", "Estrategia Digital", "Redes Sociales", "Producción Audiovisual", "Prensa", "Eventos en Vivo"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/lux-fight-league-lux-023-poster-beltran-rubio-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -258,6 +261,7 @@ const galleryItems = [
         categories: ["Estrategia y Marca", "Eventos"],
         title: "FestiGame Chile & Colombia",
         description: "<b>Director de Contenidos</b> para uno de los eventos masivos de videojuegos y cultura gaming más importante de Sudamérica.",
+        tags: ["Dirección de Contenidos", "Producción de Eventos", "Gaming", "Experiencias de Marca", "Relaciones Públicas", "Gestión de Talento", "Eventos Masivos"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/festigame-coca-cola-chile-2018-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -325,6 +329,7 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Land Vegas",
         description: "<b>Lead de Comunicación y Marca</b> para proyecto de casino y entretenimiento digital a través de gafas de Realidad Virtual (VR).",
+        tags: ["Estrategia de Marca", "Comunicación", "Realidad Virtual", "Entretenimiento Digital", "Branding"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/land-vegas-vr-person-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -364,6 +369,7 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Sprint Gaming",
         description: "<b>Social Media Lead</b> para empresa de servicios de casino en vivo, con sede en San Lorenzo, Paraguay.",
+        tags: ["Social Media Lead", "Estrategia Digital", "Casino en Vivo", "Redes Sociales", "Contenido Digital"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/sprint-gaming-live-dealer-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -403,6 +409,7 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Symi Pastisseria",
         description: "<b>Desarrollo Marca y Contenido Digital</b> para exclusiva pastelería artesanal en el barrio de Sants, en Barcelona.",
+        tags: ["Branding", "Contenido Digital", "Fotografía de Producto", "Social Media", "Copywriting", "SEO", "Desarrollo Web"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/symi-pastisseria-dulces-historias-amor-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -447,6 +454,7 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Rostisseria Tony's",
         description: "<b>Levantamiento de Marca y Branding</b> para popular local de pollos asados y comida preparada en Palamós, Girona.",
+        tags: ["Branding", "Identidad de Marca", "Estrategia Visual", "Comercio Local", "SEO", "Desarrollo Web"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/rostisseria-tonys-carta-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -472,6 +480,7 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Atòmïc Bar",
         description: "<b>Desarrollo de Carta online y acceso QR</b> para popular bar en el centro de La Vila de Gràcia, en Barcelona",
+        tags: ["Desarrollo Web", "Diseño UI", "Soluciones Digitales", "Comercio Local"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/atomic-bar-homepage-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -487,8 +496,9 @@ const galleryItems = [
     },
     {
         category: "Estrategia y Marca",
-        title: "Nailash Experience",
+        title: "Nailash Experience (ahora 'La Femme Beauty')",
         description: "<b>Desarrollo de Lanzamiento de Marca y Estrategia Visual</b> para centro de estética en El Prat de Llobregat",
+        tags: ["Lanzamiento de Marca", "Branding", "Estrategia Visual", "Identidad de Marca"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/nailash-experience-papeleria-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -514,6 +524,7 @@ const galleryItems = [
         category: "Estrategia y Marca",
         title: "Coworking Epicentre Palamós",
         description: "<b>Desarrollo de Contenido Corporativo</b> para las redes sociales de un espacio de trabajo y coworking ubicado en Palamós, Girona",
+        tags: ["Contenido Corporativo", "Redes Sociales", "Estrategia Digital", "Branding"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/epicentre-coworking-palamos-desenvolupa-idees-leonardo-salinas.jpg?auto=format&fit=crop&w=900&q=80",
@@ -547,6 +558,7 @@ const galleryItems = [
         category: "Eventos",
         title: "Formula-E Santiago ePrix 2020",
         description: "<b>FIA Runner</b> para el Santiago ePrix 2020 de Formula-E, realizado en el Parque O'Higgins.",
+        tags: ["Enlace FIA Runner", "Comunicación Deportiva", "Eventos Internacionales", "Automovilismo"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/formula-e-fia-runner-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -576,6 +588,7 @@ const galleryItems = [
         categories: ["Estrategia y Marca", "Eventos"],
         title: "Gamertón by FestiGame (Teletón 2018)",
         description: "<b>Co-Producción y Dirección de Contenidos</b> para evento presencial y televisado a nivel nacional durante 'Teletón 2018'.",
+        tags: ["Co-Producción", "Dirección de Contenidos", "Producción Televisiva", "Gaming", "Eventos en Vivo", "Eventos Masivos"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/gamerton-festigame-2018-logotipo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -601,6 +614,7 @@ const galleryItems = [
         categories: ["Estrategia y Marca", "Proyectos Propios"],
         title: "Olimaclan",
         description: "<b>Representante y Desarrollo de Branding</b> para reconocido jugador profesional chileno del videojuego 'FIFA'.",
+        tags: ["Branding", "Esports", "Representación de Talento", "Identidad Visual"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/olimaclan-fifa-ultimate-team-card-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -634,6 +648,7 @@ const galleryItems = [
         categories: ["Estrategia y Marca", "Eventos"],
         title: "Expo Diversidad 2018",
         description: "<b>Co-Productor & Gestión de Crisis de Comunicación</b> para nuevo evento que celebra la diversidad junto a la comunidad LGBTIQ+ en Santiago de Chile.",
+        tags: ["Co-Producción", "Gestión de Crisis", "Estrategia de Comunicación", "Redes Sociales", "Producción de Eventos", "Branding"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/expo-diversidad-presentacion-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -667,6 +682,7 @@ const galleryItems = [
         category: "Eventos",
         title: "fiiS 2016 (ciclo fiiS emergente)",
         description: "<b>Apoyo en Comunicación</b> para ciclo 'fiiS emergente', durante el desarrollo de fiiS 2016, en Santiago de Chile.",
+        tags: ["Comunicación", "Producción de Eventos", "Desarrollo Contenido Web"],
         image: "https://leosalinas.com/img/portfolio/fiis-emergente-2016-charlas-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
         alt: "Logotipo fiiS emergente para fiiS 2016",
         href: "#",
@@ -676,6 +692,7 @@ const galleryItems = [
         category: "Eventos",
         title: "ExpoNauta 2014 & 2015",
         description: "<b>Co-Producción de Contenidos</b> para feria y encuentro tecnológico escolar, producido para el Ministerio de Educación de Chile.",
+        tags: ["Co-Producción", "Contenido Educativo", "Tecnología", "Producción de Eventos"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/exponauta-logotipo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -709,6 +726,7 @@ const galleryItems = [
         category: "Eventos",
         title: "ExpoEnlances 2015",
         description: "<b>Apoyo en Producción</b> para evento pedagógico y tecnológico organizado por Enlaces, el Centro de Innovación del Ministerio de Educación de Chile",
+        tags: ["Producción de Eventos", "Tecnología", "Educación", "Logística"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/expoenlaces-logo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -732,8 +750,9 @@ const galleryItems = [
     },
     {
         category: "Eventos",
-        title: "Pasarela Enjoy 2015-2017",
+        title: "Pasarela Enjoy by Grupo Pasarela 2015-2017",
         description: "<b>Coordinador de Prensa y Apoyo en Producción</b> para reconocido desfile de moda realizado en los jardines del Casino Enjoy Viña del Mar",
+        tags: ["Coordinación de Prensa", "Producción de Eventos", "Relaciones Públicas", "Moda"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/grupo-pasarela-enjoy-vina-del-mar-logotipo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -771,6 +790,7 @@ const galleryItems = [
         categories: ["Estrategia y Marca", "Proyectos Propios"],
         title: "Glitch.cl",
         description: "<b>Co-Fundador y Director General</b> para portal de noticias y contenido de videojuegos en Chile.",
+        tags: ["Dirección General", "Medios Digitales", "Gaming", "Desarrollo Web", "Estrategia Editorial"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/glitch-logo-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -808,6 +828,7 @@ const galleryItems = [
         category: "Fotos",
         title: "Pepa Poduje",
         description: "<b>Sesión de Fotos</b> para Pepa Poduje: técnico en nutrición, yogaterapeuta y especializada en nutrigenética y nutrigenómica.",
+        tags: ["Fotografía Profesional", "Retrato", "Contenido Visual"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/pepa-poduje-01-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -838,6 +859,7 @@ const galleryItems = [
         category: "Fotos",
         title: "Cal Fruitós (Travessera de Dalt)",
         description: "<b>Sesión de Fotos</b> para reconocida cadena de supermercados de proximidad y fruterías, originaria de Cataluña.",
+        tags: ["Fotografía Comercial", "Fotografía de Producto", "Comercio Local", "Contenido Visual"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/cal-fruitos-01-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
@@ -868,6 +890,7 @@ const galleryItems = [
         category: "Fotos",
         title: "Open Greencourt 2026 Sabadell",
         description: "<b>Sesión de Fotos</b> para torneo ITF Future M25, un campeonato de tenis profesional realizado en el Club de Tennis Sabadell.",
+        tags: ["Fotografía Deportiva", "Eventos en Vivo", "Tenis", "Contenido Visual"],
         images: [
             {
                 src: "https://leosalinas.com/img/portfolio/open-greencourt-2026-sabadell-itf-future-01-leonardo-salinas.webp?auto=format&fit=crop&w=900&q=80",
