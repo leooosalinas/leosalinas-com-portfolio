@@ -357,6 +357,114 @@ a {
     margin-bottom: 1.5rem;
 }
 
+.portfolio-page-heading {
+    max-width: 54rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+#portfolio-project-list {
+    overflow: hidden;
+}
+
+.portfolio-page-heading h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 500;
+    letter-spacing: -.045em;
+}
+
+.portfolio-page-heading p {
+    max-width: 42rem;
+    margin: 1rem auto 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.portfolio-filter-all,
+.portfolio-category-filter select {
+    min-height: 2.75rem;
+    padding: .65rem 1rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: .8rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.portfolio-filter-all {
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.portfolio-filter-all.active,
+.portfolio-filter-all:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
+.portfolio-category-filter {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.portfolio-category-filter select {
+    max-width: min(20rem, 55vw);
+    cursor: pointer;
+}
+
+.portfolio-load-more {
+    display: grid;
+    justify-items: center;
+    gap: .75rem;
+    padding: 1rem 0 3rem;
+    text-align: center;
+}
+
+.portfolio-results-status,
+.portfolio-empty-state {
+    margin: 0;
+    color: var(--muted);
+}
+
+.portfolio-load-more-button {
+    padding: .65rem 1.25rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: .875rem;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.portfolio-load-more-button:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
+.portfolio-load-more-button[hidden] {
+    display: none;
+}
+
 /* El grupo duplicado permite desplazar los elementos en un bucle continuo. */
 .image-marquees-section {
     overflow: hidden;
@@ -718,6 +826,25 @@ a {
 
     .section-heading {
         margin-bottom: 2.5rem;
+    }
+
+    .portfolio-filters {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .portfolio-filter-all {
+        width: 100%;
+    }
+
+    .portfolio-category-filter {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .portfolio-category-filter select {
+        width: 100%;
+        max-width: none;
     }
 
     .site-footer {

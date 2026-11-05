@@ -991,46 +991,149 @@ function renderProjectTags(tags) {
 }
 
 // Crea un slideshow por proyecto, usando todas sus imágenes o su imagen individual como respaldo.
-function renderProjectImageMarquees() {
-    const container = document.querySelector("#project-image-marquees");
-    container.innerHTML = galleryItems.map((project, index) => {
-        const images = project.images?.length
-            ? project.images
-            : [{ src: project.image, alt: project.alt }];
-        const imageMarkup = images.map(image => image.type === "video" ? `
-            <video class="image-marquee-video" src="${image.src}" poster="${image.poster}" aria-label="${image.alt}" muted autoplay loop playsinline preload="metadata" width="600" height="750"></video>
-        ` : `
-            <img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async" width="600" height="750">
-        `).join("");
-        const duplicateImageMarkup = images.map(image => image.type === "video" ? `
-            <video class="image-marquee-video" src="${image.src}" poster="${image.poster}" muted autoplay loop playsinline preload="metadata" width="600" height="750"></video>
-        ` : `
-            <img src="${image.src}" alt="" loading="lazy" decoding="async" width="600" height="750">
-        `).join("");
-        const titleId = `project-marquee-title-${index + 1}`;
-        const offsetClass = index % 2 === 1 ? " image-marquee-section--offset" : "";
+function renderProjectImageMarquee(project, index, deferVideos = false) {
+    const images = project.images?.length
+        ? project.images
+        : [{ src: project.image, alt: project.alt }];
+    const renderImage = (image, alt, decorative = false) => image.type === "video" ? `
+        <video class="image-marquee-video" ${deferVideos ? `data-lazy-src="${image.src}"` : `src="${image.src}"`} poster="${image.poster}" ${decorative ? "" : `aria-label="${alt}"`} muted autoplay loop playsinline preload="${deferVideos ? "none" : "metadata"}" width="600" height="750"></video>
+    ` : `
+        <img src="${image.src}" alt="${alt}" loading="lazy" decoding="async" width="600" height="750">
+    `;
+    const imageMarkup = images.map(image => renderImage(image, image.alt)).join("");
+    const duplicateImageMarkup = images.map(image => renderImage(image, "", true)).join("");
+    const titleId = `project-marquee-title-${index + 1}`;
+    const offsetClass = index % 2 === 1 ? " image-marquee-section--offset" : "";
 
-        return `
-            <article class="image-marquee-block${offsetClass} py-5" aria-labelledby="${titleId}">
-                <div class="image-marquee" role="region" aria-label="Slideshow de imágenes de ${project.title}">
-                    <div class="image-marquee-track">
-                        <div class="image-marquee-group">
-                            ${imageMarkup}
-                        </div>
-                        <div class="image-marquee-group" aria-hidden="true">
-                            ${duplicateImageMarkup}
-                        </div>
+    return `
+        <article class="image-marquee-block${offsetClass} py-5" aria-labelledby="${titleId}">
+            <div class="image-marquee" role="region" aria-label="Slideshow de imágenes de ${project.title}">
+                <div class="image-marquee-track">
+                    <div class="image-marquee-group">
+                        ${imageMarkup}
+                    </div>
+                    <div class="image-marquee-group" aria-hidden="true">
+                        ${duplicateImageMarkup}
                     </div>
                 </div>
-                <div class="image-marquee-caption" aria-labelledby="${titleId}">
-                    <h2 id="${titleId}">${project.title}</h2>
-                    <p>${project.description}</p>
-                    ${renderProjectTags(project.tags)}
-                    <!-- <a class="btn btn-outline-dark mt-3" href="${project.href}" ${project.newTab ? 'target="_blank" rel="noopener noreferrer"' : ""}>${project.buttonText || "Ver más"}</a> -->
-                </div>
-            </article>
-        `;
-    }).join("");
+            </div>
+            <div class="image-marquee-caption" aria-labelledby="${titleId}">
+                <h2 id="${titleId}">${project.title}</h2>
+                <p>${project.description}</p>
+                ${renderProjectTags(project.tags)}
+                <!-- <a class="btn btn-outline-dark mt-3" href="${project.href}" ${project.newTab ? 'target="_blank" rel="noopener noreferrer"' : ""}>${project.buttonText || "Ver más"}</a> -->
+            </div>
+        </article>
+    `;
+}
+
+function renderProjectImageMarquees() {
+    const container = document.querySelector("#project-image-marquees");
+    container.innerHTML = galleryItems.map((project, index) => renderProjectImageMarquee(project, index)).join("");
+}
+
+function projectCategories(project) {
+    return project.categories || (project.category ? [project.category] : []);
+}
+
+function bindPortfolioPage() {
+    const projectList = document.querySelector("#portfolio-project-list");
+    const categorySelect = document.querySelector("#portfolio-category");
+    const allProjectsButton = document.querySelector(".portfolio-filter-all");
+    const loadMoreButton = document.querySelector(".portfolio-load-more-button");
+    const resultsStatus = document.querySelector(".portfolio-results-status");
+    const categories = [...new Set(galleryItems.flatMap(projectCategories))];
+
+    categories.forEach(category => {
+        const option = document.createElement("option");
+        option.value = category;
+        option.textContent = category;
+        categorySelect.append(option);
+    });
+
+    let filteredProjects = galleryItems;
+    let renderedCount = 0;
+    let videoObserver;
+
+    if ("IntersectionObserver" in window) {
+        videoObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.src = entry.target.dataset.lazySrc;
+                delete entry.target.dataset.lazySrc;
+                videoObserver.unobserve(entry.target);
+            });
+        }, { rootMargin: "200px 0px" });
+    }
+
+    const renderNextBatch = () => {
+        const batch = filteredProjects.slice(renderedCount, renderedCount + 3);
+        const firstNewProject = renderedCount;
+        projectList.insertAdjacentHTML("beforeend", batch.map((project, index) => (
+            renderProjectImageMarquee(project, firstNewProject + index, true)
+        )).join(""));
+        renderedCount += batch.length;
+
+        const newProjects = [...projectList.querySelectorAll(".image-marquee-block")].slice(firstNewProject);
+        newProjects.forEach(project => {
+            bindImageMarquee(project.querySelector(".image-marquee"));
+            project.querySelectorAll("video[data-lazy-src]").forEach(video => {
+                if (videoObserver) {
+                    videoObserver.observe(video);
+                } else {
+                    video.src = video.dataset.lazySrc;
+                    delete video.dataset.lazySrc;
+                }
+            });
+        });
+        resultsStatus.textContent = `Se muestran ${renderedCount} de ${filteredProjects.length} proyectos.`;
+        loadMoreButton.hidden = renderedCount >= filteredProjects.length;
+    };
+
+    const applyCategory = category => {
+        filteredProjects = category
+            ? galleryItems.filter(project => projectCategories(project).includes(category))
+            : galleryItems;
+        renderedCount = 0;
+        projectList.replaceChildren();
+        allProjectsButton.classList.toggle("active", !category);
+        allProjectsButton.setAttribute("aria-pressed", String(!category));
+
+        if (filteredProjects.length) {
+            renderNextBatch();
+        } else {
+            projectList.innerHTML = '<p class="portfolio-empty-state">No hay proyectos en esta categoría.</p>';
+            resultsStatus.textContent = "";
+            loadMoreButton.hidden = true;
+        }
+    };
+
+    allProjectsButton.addEventListener("click", () => {
+        categorySelect.value = "";
+        applyCategory("");
+    });
+    categorySelect.addEventListener("change", () => {
+        applyCategory(categorySelect.value);
+    });
+    loadMoreButton.addEventListener("click", renderNextBatch);
+
+    if ("IntersectionObserver" in window) {
+        const loadObserver = new IntersectionObserver(entries => {
+            if (entries.some(entry => entry.isIntersecting) && !loadMoreButton.hidden) {
+                renderNextBatch();
+            }
+        }, { rootMargin: "500px 0px" });
+        loadObserver.observe(loadMoreButton);
+    }
+
+    applyCategory("");
+}
+
+function configurePortfolioNavigation() {
+    document.querySelectorAll('.desktop-nav a[href="#galeria"], .mobile-nav a[href="#galeria"]').forEach(link => {
+        link.href = "../index.html#galeria";
+    });
 }
 
 // Los ítems con varias imágenes usan un carrusel; el resto conserva su imagen estática.
@@ -1279,6 +1382,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         await loadComponents();
     } catch (error) {
         console.error("Error al cargar los componentes de la página.", error);
+        return;
+    }
+
+    if (document.querySelector("#portfolio-project-list")) {
+        configurePortfolioNavigation();
+        bindPortfolioPage();
         return;
     }
 
