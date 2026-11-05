@@ -23,23 +23,30 @@
 
     <main>
         <section class="intro-section" aria-labelledby="intro-title">
-            <div class="intro-content">
-                <h1 id="intro-title">Hola, soy <span>Leo(nardo) Salinas</span>. Soy un ser humano curioso. Comunicador de profesión. Me gusta hacer cosas. También hago fotos.</h1>
-                <div class="intro-actions">
-                    <a class="intro-button intro-button--primary" href="#contacto">Contáctame</a>
-                    <a class="intro-button intro-button--secondary" href="#portfolio">Ver Portfolio</a>
+            <div class="intro-layout">
+                <img class="intro-image" src="https://leosalinas.com/img/photos/leonardo-salinas-aguilera-barcelona-espana-comunicacion-fotografia.webp" alt="Leonardo Salinas con una cámara">
+                <div class="intro-content">
+                    <h1 id="intro-title">Hola, soy <span>Leo(nardo) Salinas</span>. Soy un ser humano curioso. Comunicador de profesión. <span>Me gusta hacer cosas.</span> También hago fotos.</h1>
+                    <div class="intro-actions">
+                        <a class="intro-button intro-button--primary" href="#contacto">Contáctame</a>
+                        <div class="intro-portfolio-link">
+                            <a class="intro-button intro-button--secondary" href="#portfolio">Ver Portfolio</a>
+                            <svg class="intro-portfolio-arrow" viewBox="0 0 70 85" aria-hidden="true">
+                                <path d="M5 14C25 2 46 3 55 18c11 19 2 42-10 58m0 0 1-18m-1 18 16-11" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="gallery-section container-xl py-5" id="galeria">
-            <div class="photo-grid" id="photo-grid-first" aria-label="Primeras fotografías"></div>
+        <section class="image-marquees-section py-5" id="portfolio" aria-label="Slideshows de proyectos">
             <div class="section-heading text-center mx-auto">
-                <span class="eyebrow">Fotografías</span>
-                <h2>Colecciono historias para vivir de ellas</h2>
-                <p>Con el paso del tiempo, cultivé el gusto de capturar momentos a través de una cámara. Cualquier cámara. Aquí algunas de mis favoritas y la historia relacionada a ellas.</p>
+                <span class="eyebrow">Portfolio</span>
+                <h2>Las cosas que he hecho para pagar el alquiler</h2>
+                <p>...y otras cosas que he hecho sólo por amor. Todo comenzó en 1996. A los 12 años me apasioné por internet, computadoras y hacer cosas. El resto no sabría cómo describirlo.</p>
             </div>
-            <div class="photo-grid" id="photo-grid-second" aria-label="Siguientes fotografías"></div>
+            <div id="project-image-marquees"></div>
         </section>
         <!--
         <section class="projects-section py-5" id="portfolio">
@@ -62,14 +69,16 @@
         </section>
         -->
 
-        <section class="image-marquees-section py-5" id="portfolio" aria-label="Slideshows de proyectos">
+        <section class="gallery-section container-xl py-5" id="galeria">
+            <div class="photo-grid" id="photo-grid-first" aria-label="Primeras fotografías"></div>
             <div class="section-heading text-center mx-auto">
-                <span class="eyebrow">Portfolio</span>
-                <h2>Las cosas que he hecho para pagar el alquiler</h2>
-                <p>...y otras cosas que he hecho sólo por amor. Todo comenzó en 1996. A los 12 años me apasioné por internet, computadoras y hacer cosas. El resto no sabría cómo describirlo.</p>
+                <span class="eyebrow">Fotografías</span>
+                <h2>Colecciono historias para vivir de ellas</h2>
+                <p>Con el paso del tiempo, cultivé el gusto de capturar momentos a través de una cámara. Cualquier cámara. Aquí algunas de mis favoritas y la historia relacionada a ellas.</p>
             </div>
-            <div id="project-image-marquees"></div>
+            <div class="photo-grid" id="photo-grid-second" aria-label="Siguientes fotografías"></div>
         </section>
+        
     </main>
 
     <div data-include="components/footer.html"></div>

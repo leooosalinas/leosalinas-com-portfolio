@@ -134,19 +134,36 @@ a {
 .intro-section {
     display: grid;
     min-height: clamp(26rem, 62vh, 42rem);
-    padding: 5rem 1.5rem;
+    padding: clamp(3rem, 7vw, 5rem) 1.5rem;
     place-items: center;
     background: #fffaf7;
-    text-align: center;
+}
+
+.intro-layout {
+    display: grid;
+    width: min(100%, 74rem);
+    grid-template-columns: minmax(13rem, .75fr) minmax(0, 1.4fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+}
+
+.intro-image {
+    display: block;
+    width: 100%;
+    max-height: 34rem;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    object-position: center 35%;
 }
 
 .intro-content {
-    width: min(100%, 64rem);
+    min-width: 0;
+    text-align: left;
 }
 
 .intro-content h1 {
     margin: 0 auto;
-    font-size: clamp(2.2rem, 5.2vw, 4.5rem);
+    font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 500;
     letter-spacing: -.055em;
     line-height: 1.2;
@@ -162,21 +179,24 @@ a {
 .intro-actions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
     margin-top: 2rem;
 }
 
 .intro-button {
     display: inline-flex;
-    min-height: 2.75rem;
+    box-sizing: border-box;
+    height: 3rem;
     align-items: center;
     justify-content: center;
-    padding: .65rem 1.4rem;
+    padding: 0 1.54rem;
     border: 1px solid var(--ink);
     border-radius: 999px;
-    font-size: .875rem;
+    font-size: .9625rem;
     font-weight: 600;
+    line-height: 1;
     transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 }
 
@@ -197,6 +217,24 @@ a {
     color: #fff;
 }
 
+.intro-portfolio-link {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.intro-portfolio-arrow {
+    width: clamp(3rem, 7vw, 4.25rem);
+    height: auto;
+    overflow: visible;
+    transform: translateY(.75rem);
+    fill: none;
+    stroke: #fa503d;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+}
+
 /* Galería: cuadrícula regular para evitar que las columnas estrechen las fotos. */
 .gallery-section {
     border-bottom: 1px solid #d7d5cf;
@@ -213,8 +251,8 @@ a {
 
 .section-heading h2 {
     margin: 0;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 400;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 500;
     letter-spacing: -.035em;
 }
 
@@ -223,7 +261,7 @@ a {
     margin: 1rem auto 0;
     color: var(--muted);
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.4;
 }
 
 .eyebrow {
@@ -334,7 +372,7 @@ a {
 
 .image-marquee-caption h2 {
     margin: 0;
-    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 400;
     letter-spacing: -.025em;
 }
@@ -343,8 +381,12 @@ a {
     max-width: 48rem;
     margin: .5rem 0 0;
     color: var(--muted);
-    font-size: .9rem;
+    font-size: 1rem;
     line-height: 1.6;
+}
+
+.image-marquee-caption p b {
+    font-weight: 600;
 }
 
 .image-marquee-section--offset .image-marquee-track {
@@ -510,6 +552,28 @@ a {
     font-size: .85rem;
 }
 
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: .75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-tag {
+    cursor: default;
+    padding: .35rem .8rem;
+    border: 1px solid #a8a6a0;
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: .65rem;
+    letter-spacing: .04em;
+    line-height: 1.2;
+    user-select: none;
+    text-transform: uppercase;
+}
+
 .gallery-card .btn {
     padding: .3rem .65rem;
     font-size: .75rem;
@@ -623,6 +687,18 @@ a {
 
     .menu-toggle {
         display: block;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .intro-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .intro-image {
+        width: clamp(10rem, 42vw, 15rem);
+        margin: 0 auto;
     }
 }
 
