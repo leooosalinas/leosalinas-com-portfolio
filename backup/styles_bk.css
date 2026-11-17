@@ -1,0 +1,880 @@
+/* Colores y tipografía compartidos por toda la página. */
+:root {
+    --page-bg: #f7f6f2;
+    --section-bg: #f4f3ee;
+    --ink: #222;
+    --muted: #6c6a66;
+    --serif: "Source Serif 4", Georgia, serif;
+    /* Mantiene rectas las esquinas de todos los componentes Bootstrap del proyecto. */
+    --bs-border-radius: 0;
+    --bs-border-radius-sm: 0;
+    --bs-border-radius-lg: 0;
+    --bs-border-radius-xl: 0;
+    --bs-border-radius-xxl: 0;
+    --bs-border-radius-pill: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos base y enlaces globales. */
+body {
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--ink);
+    font-family: var(--serif);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Cabecera, navegación principal y menú móvil de Bootstrap. */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    border-bottom: 1px solid #d7d5cf;
+}
+
+.site-brand {
+    display: grid;
+    gap: .2rem;
+}
+
+.site-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -.04em;
+    line-height: 1.15;
+}
+
+.site-tagline {
+    color: var(--muted);
+    font-size: .75rem;
+    letter-spacing: .04em;
+}
+
+.desktop-nav,
+.site-footer nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2.5vw, 2rem);
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.desktop-nav a,
+.site-footer a,
+.mobile-nav a {
+    transition: color .2s ease;
+}
+
+.desktop-nav a:hover,
+.site-footer a:hover,
+.mobile-nav a:hover {
+    color: #000;
+}
+
+.menu-toggle {
+    display: none;
+    padding: .5rem;
+    border: 0;
+}
+
+.btn-close {
+    border-radius: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    margin: 5px 0;
+    background: currentColor;
+}
+
+.mobile-navigation {
+    background: var(--page-bg);
+}
+
+.mobile-navigation .offcanvas-title {
+    font-size: .9rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.mobile-nav {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    font-size: .9rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.mobile-signature {
+    padding-top: 1.25rem;
+    border-top: 1px solid #d7d5cf;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.mobile-signature span {
+    color: var(--muted);
+    font-size: .7rem;
+    font-weight: 400;
+}
+
+.intro-section {
+    display: grid;
+    min-height: clamp(26rem, 62vh, 42rem);
+    padding: clamp(3rem, 7vw, 5rem) 1.5rem;
+    place-items: center;
+    background: #fffaf7;
+}
+
+.intro-layout {
+    display: grid;
+    width: min(100%, 74rem);
+    grid-template-columns: minmax(13rem, .75fr) minmax(0, 1.4fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+}
+
+.intro-image {
+    display: block;
+    width: 100%;
+    max-height: 34rem;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    object-position: center 35%;
+}
+
+.intro-content {
+    min-width: 0;
+    text-align: left;
+}
+
+.intro-content h1 {
+    margin: 0 auto;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -.055em;
+    line-height: 1.2;
+}
+
+.intro-content h1 span {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: -.04em;
+}
+
+.intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.intro-button {
+    display: inline-flex;
+    box-sizing: border-box;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.54rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    font-size: .9625rem;
+    font-weight: 600;
+    line-height: 1;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.intro-button--primary {
+    border-color: #fa503d;
+    background: #fa503d;
+    color: #fff;
+}
+
+.intro-button--primary:hover {
+    border-color: #dc3e2d;
+    background: #dc3e2d;
+    color: #fff;
+}
+
+.intro-button--secondary:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
+.intro-portfolio-link {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.intro-portfolio-arrow {
+    width: clamp(3rem, 7vw, 4.25rem);
+    height: auto;
+    overflow: visible;
+    transform: translateY(.75rem);
+    fill: none;
+    stroke: #fa503d;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+}
+
+/* Galería: cuadrícula regular para evitar que las columnas estrechen las fotos. */
+.gallery-section {
+    border-bottom: 1px solid #d7d5cf;
+}
+
+.section-heading {
+    max-width: 54rem;
+    margin-bottom: 3.5rem;
+}
+
+#galeria > .section-heading {
+    margin-top: 4rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -.035em;
+}
+
+.section-heading p {
+    max-width: 48rem;
+    margin: 1rem auto 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: .5rem;
+    color: var(--muted);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.photo-card {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+.photo-frame {
+    display: block;
+    overflow: hidden;
+    padding: var(--frame-padding);
+    border: var(--frame-width) solid var(--frame-color);
+    background: #fff;
+    box-shadow: inset 0 0 4px #0003, 0 10px 24px #0002;
+    transition: transform .5s cubic-bezier(.16, 1, .3, 1);
+}
+
+.photo-frame-1 {
+    --frame-width: 4px;
+    --frame-padding: 6px;
+}
+
+.photo-frame-2 {
+    --frame-width: 7px;
+    --frame-padding: 9px;
+}
+
+.photo-frame-3 {
+    --frame-width: 10px;
+    --frame-padding: 12px;
+}
+
+.photo-frame-4 {
+    --frame-width: 14px;
+    --frame-padding: 15px;
+}
+
+.photo-frame-5 {
+    --frame-width: 18px;
+    --frame-padding: 18px;
+}
+
+.photo-image {
+    display: block;
+    aspect-ratio: var(--photo-ratio, 4 / 5);
+    overflow: hidden;
+}
+
+.photo-card:hover .photo-frame {
+    transform: scale(1.01);
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter .4s ease;
+}
+
+.photo-card:hover .photo-frame img {
+    filter: grayscale(0);
+}
+
+/* Sección de portfolio y tarjetas responsivas de la galería filtrable. */
+.projects-section {
+    background: var(--section-bg);
+}
+
+.projects-section .section-heading {
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-page-heading {
+    max-width: 54rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+#portfolio-project-list {
+    overflow: hidden;
+}
+
+.portfolio-page-heading h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 500;
+    letter-spacing: -.045em;
+}
+
+.portfolio-page-heading p {
+    max-width: 42rem;
+    margin: 1rem auto 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.portfolio-filter-all,
+.portfolio-category-filter select {
+    min-height: 2.75rem;
+    padding: .65rem 1rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: .8rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.portfolio-filter-all {
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.portfolio-filter-all.active,
+.portfolio-filter-all:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
+.portfolio-category-filter {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.portfolio-category-filter select {
+    max-width: min(20rem, 55vw);
+    cursor: pointer;
+}
+
+.portfolio-load-more {
+    display: grid;
+    justify-items: center;
+    gap: .75rem;
+    padding: 1rem 0 3rem;
+    text-align: center;
+}
+
+.portfolio-results-status,
+.portfolio-empty-state {
+    margin: 0;
+    color: var(--muted);
+}
+
+.portfolio-load-more-button {
+    padding: .65rem 1.25rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: .875rem;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.portfolio-load-more-button:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
+.portfolio-load-more-button[hidden] {
+    display: none;
+}
+
+/* El grupo duplicado permite desplazar los elementos en un bucle continuo. */
+.image-marquees-section {
+    overflow: hidden;
+    background: var(--page-bg);
+}
+
+.image-marquee-caption {
+    max-width: 72rem;
+    margin: 1.5rem auto 0;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    text-align: left;
+}
+
+.image-marquee-caption h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 400;
+    letter-spacing: -.025em;
+}
+
+.image-marquee-caption p {
+    max-width: 48rem;
+    margin: .5rem 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.image-marquee-caption p b {
+    font-weight: 600;
+}
+
+.image-marquee-section--offset .image-marquee-track {
+    margin-left: clamp(3rem, 9vw, 6rem);
+}
+
+.image-marquee {
+    --marquee-gap: clamp(.75rem, 2vw, 1.5rem);
+    overflow: hidden;
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.image-marquee.is-dragging {
+    cursor: grabbing;
+}
+
+.image-marquee-track,
+.image-marquee-group {
+    display: flex;
+    width: max-content;
+}
+
+.image-marquee-track {
+    animation: image-marquee-scroll 72s linear infinite;
+    will-change: transform;
+}
+
+.image-marquee-group {
+    flex: none;
+    gap: var(--marquee-gap);
+    padding-right: var(--marquee-gap);
+}
+
+.image-marquee img,
+.image-marquee-video {
+    display: block;
+    flex: 0 0 clamp(10rem, 22vw, 18rem);
+    width: clamp(10rem, 22vw, 18rem);
+    height: clamp(12.5rem, 27.5vw, 22.5rem);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.image-marquee img {
+    height: auto;
+    -webkit-user-drag: none;
+}
+
+@keyframes image-marquee-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.gallery-card {
+    overflow: hidden;
+    border: 0;
+    background: var(--page-bg);
+    box-shadow: 0 2px 8px #0000000a;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #00000014;
+}
+
+.gallery-card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.gallery-carousel {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: #e5e3dd;
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.gallery-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(calc(var(--slide-offset, 0%) + var(--drag-offset, 0px)), 0, 0);
+    transition: transform .3s ease;
+}
+
+.gallery-carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-carousel .gallery-card-image {
+    height: 100%;
+    -webkit-user-drag: none;
+}
+
+.gallery-carousel.is-dragging {
+    cursor: grabbing;
+}
+
+.gallery-carousel.is-dragging .gallery-carousel-track {
+    transition: none;
+}
+
+.gallery-carousel-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    display: grid;
+    width: 2rem;
+    height: 2.75rem;
+    padding: 0;
+    place-items: center;
+    transform: translateY(-50%);
+    border: 0;
+    background: #0009;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    transition: background-color .2s ease;
+}
+
+.gallery-carousel-arrow:hover,
+.gallery-carousel-arrow:focus-visible {
+    background: #000;
+}
+
+.gallery-carousel-arrow.previous {
+    left: .5rem;
+}
+
+.gallery-carousel-arrow.next {
+    right: .5rem;
+}
+
+.gallery-card .card-body {
+    padding: .85rem;
+}
+
+.gallery-card .card-title {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: .35rem;
+}
+
+.gallery-card-description {
+    /* Reserva el alto de tres líneas para alinear los botones entre tarjetas. */
+    min-height: 5em;
+    line-height: 1.35;
+    margin-bottom: .55rem;
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: .75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-tag {
+    cursor: default;
+    padding: .35rem .8rem;
+    border: 1px solid #a8a6a0;
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: .65rem;
+    letter-spacing: .04em;
+    line-height: 1.2;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+.gallery-card .btn {
+    padding: .3rem .65rem;
+    font-size: .75rem;
+}
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-top: 1px solid #d7d5cf;
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: .08em;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* Modal de Bootstrap para mostrar una fotografía ampliada. */
+.photo-modal-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    overflow: hidden;
+    border: 1px solid #333;
+    border-radius: 0;
+    background: #181818;
+    color: #eee;
+}
+
+.modal-close {
+    position: absolute;
+    z-index: 1;
+    top: .75rem;
+    right: .75rem;
+}
+
+.modal-photo {
+    display: grid;
+    min-height: 20rem;
+    max-height: 82vh;
+    place-items: center;
+    padding: 1rem;
+    background: #050505;
+}
+
+.modal-photo img {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+}
+
+.modal-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.modal-caption .eyebrow {
+    color: #e3b96f;
+    font-size: .65rem;
+}
+
+.modal-caption h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.modal-caption p,
+.modal-caption small {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-carousel-track {
+        transition: none;
+    }
+
+    .image-marquee {
+        overflow-x: auto;
+    }
+
+    .image-marquee-track {
+        animation: none;
+        will-change: auto;
+    }
+}
+
+/* Ajustes de columnas y navegación para tablet y móvil. */
+@media (min-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .photo-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 991.98px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .intro-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .intro-image {
+        width: clamp(10rem, 42vw, 15rem);
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .site-header {
+        gap: .75rem;
+    }
+
+    .site-title {
+        font-size: 1.8rem;
+    }
+
+    .site-tagline {
+        max-width: 16rem;
+        font-size: .65rem;
+    }
+
+    .section-heading {
+        margin-bottom: 2.5rem;
+    }
+
+    .portfolio-filters {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .portfolio-filter-all {
+        width: 100%;
+    }
+
+    .portfolio-category-filter {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .portfolio-category-filter select {
+        width: 100%;
+        max-width: none;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-footer nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-size: .7rem;
+    }
+
+    .photo-modal-content {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-photo {
+        min-height: 12rem;
+        max-height: 55vh;
+    }
+
+    .modal-photo img {
+        max-height: 52vh;
+    }
+
+    .modal-caption {
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+}

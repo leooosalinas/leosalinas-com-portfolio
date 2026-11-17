@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Leo(nardo) Salinas | Ser humano. Curioso. Me gusta hacer cosas. También hago fotos.</title>
-    <meta name="description" content="Portfolio de comunicación, producción de eventos, gestión de proyectos y fotografía por Leo(nardo) Salinas en Barcelona.">
+    <title>Leo(nardo) Salinas | Comunicación, proyectos y fotografía</title>
+    <meta name="description" content="Portfolio de Leo(nardo) Salinas: proyectos de comunicación, eventos y fotografía en Barcelona y Latinoamérica.">
     <meta name="author" content="Leo(nardo) Salinas">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Leo(nardo) Salinas | Comunicación, Proyectos y Fotografía">
-    <meta property="og:description" content="Portfolio de proyectos, trabajos y fotografías de Leo(nardo) Salinas en Barcelona.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:title" content="Leo(nardo) Salinas | Comunicación, proyectos y fotografía">
+    <meta property="og:description" content="Una selección de proyectos de comunicación, eventos y fotografía de Leo(nardo) Salinas.">
+    <meta property="og:image" content="https://leosalinas.com/img/photos/leonardo-salinas-aguilera-barcelona-espana-comunicacion-fotografia.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
@@ -24,9 +24,9 @@
     <main>
         <section class="intro-section" aria-labelledby="intro-title">
             <div class="intro-layout">
-                <img class="intro-image" src="https://leosalinas.com/img/photos/leonardo-salinas-aguilera-barcelona-espana-comunicacion-fotografia.webp" alt="Leonardo Salinas con una cámara">
+                <img class="intro-image" src="https://leosalinas.com/img/photos/leonardo-salinas-aguilera-barcelona-espana-comunicacion-fotografia.webp" alt="Leonardo Salinas con una cámara" loading="lazy" decoding="async">
                 <div class="intro-content">
-                    <h1 id="intro-title">Hola, soy <span>Leo(nardo) Salinas</span>. Soy un ser humano curioso. Comunicador de profesión. <span>Me gusta hacer cosas.</span> También hago fotos.</h1>
+                    <h1 id="intro-title"><span>Hola, soy Leo(nardo) Salinas</span>. Soy un ser humano curioso. <span>Comunicador de profesión. Me gusta hacer cosas.</span> También hago fotos.</h1>
                     <div class="intro-actions">
                         <a class="intro-button intro-button--primary" href="#contacto">Contáctame</a>
                         <div class="intro-portfolio-link">
@@ -40,50 +40,63 @@
             </div>
         </section>
 
-        <section class="image-marquees-section py-5" id="portfolio" aria-label="Slideshows de proyectos">
-            <div class="section-heading text-center mx-auto">
+        <section class="page-section portfolio-section" id="portfolio" aria-labelledby="portfolio-title">
+            <div class="section-heading">
                 <span class="eyebrow">Portfolio</span>
                 <h2>Las cosas que he hecho para pagar el alquiler</h2>
                 <p>...y otras cosas que he hecho sólo por amor. Todo comenzó en 1996. A los 12 años me apasioné por internet, computadoras y hacer cosas. El resto no sabría cómo describirlo.</p>
             </div>
-            <div id="project-image-marquees"></div>
-        </section>
-        <!--
-        <section class="projects-section py-5" id="portfolio">
-            <div class="container-xl py-4">
-                <div class="section-heading text-center mx-auto">
-                    <span class="eyebrow">Portfolio</span>
-                    <h2>Las cosas que he hecho para pagar el alquiler</h2>
-                    <p>...y otras cosas que he hecho sólo por amor. Todo comenzó en 1996. A los 12 años me apasioné por internet, computadoras y hacer cosas. El resto no sabría cómo describirlo.</p>
-                </div>
-                <div class="gallery-filters d-flex flex-wrap justify-content-center gap-2 mb-4" role="group" aria-label="Filtrar proyectos por categoría">
-                    <button class="btn btn-outline-dark active" type="button" data-gallery-filter="all" aria-pressed="true">Todos</button>
-                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Estrategia y Marca" aria-pressed="false">Estrategia y Marca</button>
-                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Eventos" aria-pressed="false">Eventos</button>
-                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Fotos" aria-pressed="false">Fotos</button>
-                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Vídeos" aria-pressed="false">Vídeos</button>
-                    <button class="btn btn-outline-dark" type="button" data-gallery-filter="Proyectos Propios" aria-pressed="false">Proyectos Propios</button>
-                </div>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-4" id="gallery-grid" aria-live="polite"></div>
+            <div class="project-grid" id="project-grid"></div>
+            <div class="more-projects-wrap">
+                <a class="text-link" href="/portfolio/">VER MÁS PROYECTOS</a>
             </div>
         </section>
-        -->
+        <!--
+        <section class="page-section facts-section" id="cosas-que-debes-saber" aria-labelledby="facts-title">
+            <div class="section-heading">
+                <span class="eyebrow">Un poco sobre mí</span>
+                <h2 id="facts-title">Cosas que debes saber</h2>
+            </div>
+            <div class="facts-grid">
+                <article class="fact-item"><h3>Dato 01</h3><p>Añade aquí una cifra, título o idea breve sobre tu experiencia.</p></article>
+                <article class="fact-item"><h3>Dato 02</h3><p>Añade aquí una cifra, título o idea breve sobre tu experiencia.</p></article>
+                <article class="fact-item"><h3>Dato 03</h3><p>Añade aquí una cifra, título o idea breve sobre tu experiencia.</p></article>
+                <article class="fact-item"><h3>Dato 04</h3><p>Añade aquí una cifra, título o idea breve sobre tu experiencia.</p></article>
+                <article class="fact-item"><h3>Dato 05</h3><p>Añade aquí una cifra, título o idea breve sobre tu experiencia.</p></article>
+                <article class="fact-item"><h3>Dato 06</h3><p>Añade aquí una cifra, título o idea breve sobre tu experiencia.</p></article>
+            </div>
+        </section>
 
-        <section class="gallery-section container-xl py-5" id="galeria">
+        <section class="page-section gallery-section" id="galeria">
             <div class="photo-grid" id="photo-grid-first" aria-label="Primeras fotografías"></div>
-            <div class="section-heading text-center mx-auto">
+            <div class="section-heading mx-auto">
                 <span class="eyebrow">Fotografías</span>
                 <h2>Colecciono historias para vivir de ellas</h2>
                 <p>Con el paso del tiempo, cultivé el gusto de capturar momentos a través de una cámara. Cualquier cámara. Aquí algunas de mis favoritas y la historia relacionada a ellas.</p>
             </div>
             <div class="photo-grid" id="photo-grid-second" aria-label="Siguientes fotografías"></div>
         </section>
-        
+        -->
+        <section class="page-section contact-section" id="contacto" aria-labelledby="contact-title">
+            <div class="contact-copy">
+                <span class="eyebrow">Contacto</span>
+                <h2 id="contact-title">¿Tienes un proyecto en mente o sólo quieres saludar?</h2>
+                <a class="contact-email" href="mailto:hileosalinas@gmail.com">hileosalinas@gmail.com</a>
+            </div>
+            <svg class="contact-illustration" viewBox="0 0 180 150" role="img" aria-label="Ilustración de un buzón">
+                <g fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                    <path d="M66 54 138 35c14-4 27 6 27 20v38l-77 21c-15 4-29-7-29-22V70c0-7 2-12 7-16Z"/>
+                    <path d="m77 59 12 48M102 47v18c0 11 18 11 18 0V41M100 113l-10 26m47-39 3 35"/>
+                    <path d="m39 60-27 21 24 31 28-23-25-29Z"/>
+                    <path d="m28 83 21-7m-17 18 15-5m-8 29 10-10m1 25 9-10m-3 22 9-10"/>
+                    <path d="m65 35-8-12m28 6-3-15m27 12 2-14"/>
+                </g>
+            </svg>
+        </section>
     </main>
 
     <div data-include="components/footer.html"></div>
 
-    <!-- Modal para ampliar una de las fotografías de la cuadrícula superior. -->
     <div class="modal fade" id="photo-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content photo-modal-content">
